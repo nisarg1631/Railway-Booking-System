@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "string": "cpp"
+    },
+    "C_Cpp.default.compileCommands": "/usr/bin/g++-10",
+    "C_Cpp.default.compilerArgs": [
+        "-std=c++11",
+    ],
+}
