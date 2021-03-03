@@ -5,6 +5,15 @@
 BookingClasses::BookingClasses(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : name_(name), isAC_(isAC), isLuxury_(IsLuxury), loadFactor_(loadFactor) {}
 BookingClasses::~BookingClasses() {}
 
+ostream &operator<<(ostream &out, const BookingClasses &obj){
+    out<<obj.name_<<endl;
+    out<<"\t-Is AC: "<<(obj.isAC_ ? "Yes" : "No")<<endl;
+    out<<"\t-Is Sitting: "<<(obj.IsSitting() ? "Yes" : "No")<<endl;
+    out<<"\t-Is Luxury: "<<(obj.isLuxury_ ? "Yes" : "No")<<endl;
+    out<<"\t-Tiers: "<<obj.GetNumberOfTiers()<<endl;
+    out<<"\t-Load Factor: "<<obj.loadFactor_;
+}
+
 //class SittingClasses
 
 SittingClasses::SittingClasses(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : BookingClasses(name, isAC, IsLuxury, loadFactor) {}

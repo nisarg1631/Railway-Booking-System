@@ -31,6 +31,8 @@ class BookingClasses{
         }
         virtual bool IsSitting() const = 0;
         virtual uint32_t GetNumberOfTiers() const = 0;
+
+        friend ostream &operator<<(ostream &, const BookingClasses &);
 };
 
 class SittingClasses : public BookingClasses{
