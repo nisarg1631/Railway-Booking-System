@@ -3,15 +3,19 @@
 //class BookingClasses
 
 BookingClasses::BookingClasses(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : name_(name), isAC_(isAC), isLuxury_(IsLuxury), loadFactor_(loadFactor) {}
+BookingClasses::BookingClasses(const BookingClasses &obj) : name_(obj.name_), isAC_(obj.isAC_), isLuxury_(obj.isLuxury_), loadFactor_(obj.loadFactor_) {}
 BookingClasses::~BookingClasses() {}
 
-ostream &operator<<(ostream &out, const BookingClasses &obj){
-    out<<obj.name_<<endl;
-    out<<"\t-Is AC: "<<(obj.isAC_ ? "Yes" : "No")<<endl;
-    out<<"\t-Is Sitting: "<<(obj.IsSitting() ? "Yes" : "No")<<endl;
-    out<<"\t-Is Luxury: "<<(obj.isLuxury_ ? "Yes" : "No")<<endl;
-    out<<"\t-Tiers: "<<obj.GetNumberOfTiers()<<endl;
-    out<<"\t-Load Factor: "<<obj.loadFactor_;
+BookingClasses &BookingClasses::operator=(const BookingClasses &) { return *this; }
+
+ostream &operator<<(ostream &os, const BookingClasses &obj){
+    os<<obj.name_<<endl;
+    os<<"\t-Is AC: "<<(obj.isAC_ ? "Yes" : "No")<<endl;
+    os<<"\t-Is Sitting: "<<(obj.IsSitting() ? "Yes" : "No")<<endl;
+    os<<"\t-Is Luxury: "<<(obj.isLuxury_ ? "Yes" : "No")<<endl;
+    os<<"\t-Tiers: "<<obj.GetNumberOfTiers()<<endl;
+    os<<"\t-Load Factor: "<<obj.loadFactor_;
+    return os;
 }
 
 //class SittingClasses

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 class BookingClasses{
@@ -11,6 +12,9 @@ class BookingClasses{
         const string &name_;
         const bool &isAC_, &isLuxury_;
         const double &loadFactor_;
+
+        BookingClasses(const BookingClasses &);
+        BookingClasses &operator=(const BookingClasses &);
 
     protected:
         BookingClasses(const string &, const bool &, const bool &, const double &);

@@ -1,7 +1,9 @@
 #include <iostream>
+
 using namespace std;
 
 #include "BookingClasses.h"
+#include "Railways.h"
 #include "Booking.h"
 
 const bool ACFirstClass::sIsLuxury = true;
@@ -25,6 +27,14 @@ const double Sleeper::sLoadFactor = 1.00;
 const bool SecondSitting::sIsLuxury = false;
 const double SecondSitting::sLoadFactor = 0.50;
 
-void debug(const BookingClasses &obj){
+const double Booking::sBaseFarePerKM = 0.50;
+const double Booking::sACSurcharge = 50.00;
+const double Booking::sLuxuryTaxPercent = 25;
+
+void debug_bookingclasses(const BookingClasses &obj){
+    cout<<obj<<endl;
+}
+
+void debug_railways(const Railways &obj){
     cout<<obj<<endl;
 }

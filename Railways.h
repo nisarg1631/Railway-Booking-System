@@ -1,13 +1,13 @@
-#ifndef RAILWAYS_HPP
-#define RAILWAYS_HPP
+#ifndef _RAILWAYS_H
+#define _RAILWAYS_H
 
 #include <iostream>
 #include <vector>
 #include <unordered_map>
 
-#include "Station.h"
-
 using namespace std;
+
+class Station;
 
 class Railways{
 
@@ -15,11 +15,14 @@ class Railways{
         Railways();
         ~Railways();
 
-        static vector<Station> sStations;
-        static unordered_map<string, unordered_map<string, uint32_t> > sDistStations;
+        Railways(const Railways &);
+        Railways &operator=(const Railways &);
 
-        void AddStation(const Station &);
-        void AddRoute(const Station &, const Station &, uint32_t distance);
+        static const vector<Station> sStations;
+        static const unordered_map<string, unordered_map<string, uint32_t> > sDistStations;
+
+        static vector<Station> LoadStations();
+        static unordered_map<string, unordered_map<string, uint32_t> > LoadRoutes();
 
     public:
         static const Railways &IndianRailways();

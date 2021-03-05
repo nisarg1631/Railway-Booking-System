@@ -1,5 +1,5 @@
-#ifndef STATION_HPP
-#define STATION_HPP
+#ifndef _STATION_H
+#define _STATION_H
 
 #include <iostream>
 #include <string>
@@ -11,11 +11,16 @@ class Station{
     private:
         const string name_;
 
+        Station &operator=(const Station &);
+
     public:
         Station(string);
+        Station(const Station &);
         ~Station();
 
-        string GetName() const;
+        inline string GetName() const{
+            return name_;
+        }
         uint32_t GetDistance(const Station &) const;
         friend ostream &operator<<(ostream &, const Station &);
 };
