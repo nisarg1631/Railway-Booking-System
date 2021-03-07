@@ -5,15 +5,15 @@ uint32_t Booking::sBookingPNRSerial = 1;
 vector<Booking *> Booking::sBookings;
 
 Booking::Booking(const Station &fromStation, const Station &toStation, const Date &date, const BookingClasses &bookingClass, const Person *person) :
-    fromStation_(fromStation), toStation_(toStation), date_(date), bookingClass_(bookingClass), pnr_(sBookingPNRSerial++), fare_(0) {
+    fromStation_(fromStation), toStation_(toStation), date_(date), bookingClass_(bookingClass), pnr_(sBookingPNRSerial++) {
         bookingStatus_ = true;
         bookingMessage_ = "BOOKING SUCCEEDED";
-        ComputeFare();
+        fare_ = ComputeFare();
         sBookings.push_back(this);
     }
 Booking::~Booking() {}
 
-void Booking::ComputeFare(){
+uint32_t Booking::ComputeFare() const{
     double fare = 0.0;
     fare += (static_cast<double>(fromStation_.GetDistance(toStation_)) * sBaseFarePerKM);
     fare *= bookingClass_.GetLoadFactor();
@@ -21,7 +21,7 @@ void Booking::ComputeFare(){
         fare += sACSurcharge;
     if(bookingClass_.IsLuxury())
         fare += (fare * (sLuxuryTaxPercent/100));
-    fare_ = static_cast<uint32_t>(round(fare));
+    return static_cast<uint32_t>(round(fare));
 }
 
 ostream &operator<<(ostream &os, const Booking &obj){

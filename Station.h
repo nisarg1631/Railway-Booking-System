@@ -22,7 +22,10 @@ class Station{
             return name_;
         }
         uint32_t GetDistance(const Station &) const;
+
         friend ostream &operator<<(ostream &, const Station &);
+
+        static void UnitTestStation();
 };
 
 #endif

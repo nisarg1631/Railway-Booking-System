@@ -2,49 +2,43 @@
 
 //class BookingClasses
 
-BookingClasses::BookingClasses(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : name_(name), isAC_(isAC), isLuxury_(IsLuxury), loadFactor_(loadFactor) {}
-BookingClasses::BookingClasses(const BookingClasses &obj) : name_(obj.name_), isAC_(obj.isAC_), isLuxury_(obj.isLuxury_), loadFactor_(obj.loadFactor_) {}
+BookingClasses::BookingClasses(const string &name, const bool &isAC) : name_(name), isAC_(isAC) {}
 BookingClasses::~BookingClasses() {}
-
-BookingClasses &BookingClasses::operator=(const BookingClasses &) { return *this; }
 
 ostream &operator<<(ostream &os, const BookingClasses &obj){
     os<<obj.name_<<endl;
     os<<"\t-Is AC: "<<(obj.isAC_ ? "Yes" : "No")<<endl;
     os<<"\t-Is Sitting: "<<(obj.IsSitting() ? "Yes" : "No")<<endl;
-    os<<"\t-Is Luxury: "<<(obj.isLuxury_ ? "Yes" : "No")<<endl;
+    os<<"\t-Is Luxury: "<<(obj.IsLuxury() ? "Yes" : "No")<<endl;
     os<<"\t-Tiers: "<<obj.GetNumberOfTiers()<<endl;
-    os<<"\t-Load Factor: "<<obj.loadFactor_;
+    os<<"\t-Load Factor: "<<obj.GetLoadFactor();
     return os;
 }
 
 //class SittingClasses
 
-SittingClasses::SittingClasses(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : BookingClasses(name, isAC, IsLuxury, loadFactor) {}
+SittingClasses::SittingClasses(const string &name, const bool &isAC) : BookingClasses(name, isAC) {}
 SittingClasses::~SittingClasses() {}
 
 //class SleepingClasses
 
-SleepingClasses::SleepingClasses(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : BookingClasses(name, isAC, IsLuxury, loadFactor) {}
+SleepingClasses::SleepingClasses(const string &name, const bool &isAC) : BookingClasses(name, isAC) {}
 SleepingClasses::~SleepingClasses() {}
 
 //class Sleeping2Tier
 
-Sleeping2Tier::Sleeping2Tier(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : SleepingClasses(name, isAC, IsLuxury, loadFactor) {}
+Sleeping2Tier::Sleeping2Tier(const string &name, const bool &isAC) : SleepingClasses(name, isAC) {}
 Sleeping2Tier::~Sleeping2Tier() {}
 
 //class Sleeping3Tier
 
-Sleeping3Tier::Sleeping3Tier(const string &name, const bool &isAC, const bool &IsLuxury, const double &loadFactor) : SleepingClasses(name, isAC, IsLuxury, loadFactor) {}
+Sleeping3Tier::Sleeping3Tier(const string &name, const bool &isAC) : SleepingClasses(name, isAC) {}
 Sleeping3Tier::~Sleeping3Tier() {}
 
 //class ACFirstClass
 
-ACFirstClass::ACFirstClass() : Sleeping2Tier(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+ACFirstClass::ACFirstClass() : Sleeping2Tier("AC First Class", true) {}
 ACFirstClass::~ACFirstClass() {}
-
-const string ACFirstClass::sName = "AC First Class";
-const bool ACFirstClass::sIsAC = true;
 
 const ACFirstClass &ACFirstClass::Type(){
     static const ACFirstClass sACFirstClass;
@@ -53,11 +47,8 @@ const ACFirstClass &ACFirstClass::Type(){
 
 //class AC2Tier
 
-AC2Tier::AC2Tier() : Sleeping2Tier(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+AC2Tier::AC2Tier() : Sleeping2Tier("AC 2 Tier", true) {}
 AC2Tier::~AC2Tier() {}
-
-const string AC2Tier::sName = "AC 2 Tier";
-const bool AC2Tier::sIsAC = true;
 
 const AC2Tier &AC2Tier::Type(){
     static const AC2Tier sAC2Tier;
@@ -66,11 +57,8 @@ const AC2Tier &AC2Tier::Type(){
 
 //class FirstClass
 
-FirstClass::FirstClass() : Sleeping2Tier(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+FirstClass::FirstClass() : Sleeping2Tier("First Class", false) {}
 FirstClass::~FirstClass() {}
-
-const string FirstClass::sName = "First Class";
-const bool FirstClass::sIsAC = false;
 
 const FirstClass &FirstClass::Type(){
     static const FirstClass sFirstClass;
@@ -79,11 +67,8 @@ const FirstClass &FirstClass::Type(){
 
 //class AC3Tier
 
-AC3Tier::AC3Tier() : Sleeping3Tier(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+AC3Tier::AC3Tier() : Sleeping3Tier("AC 3 Tier", true) {}
 AC3Tier::~AC3Tier() {}
-
-const string AC3Tier::sName = "AC 3 Tier";
-const bool AC3Tier::sIsAC = true;
 
 const AC3Tier &AC3Tier::Type(){
     static const AC3Tier sAC3Tier;
@@ -92,11 +77,8 @@ const AC3Tier &AC3Tier::Type(){
 
 //class ACChairCar
 
-ACChairCar::ACChairCar() : SittingClasses(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+ACChairCar::ACChairCar() : SittingClasses("AC Chair Car", true) {}
 ACChairCar::~ACChairCar() {}
-
-const string ACChairCar::sName = "AC Chair Car";
-const bool ACChairCar::sIsAC = true;
 
 const ACChairCar &ACChairCar::Type(){
     static const ACChairCar sACChairCar;
@@ -105,11 +87,8 @@ const ACChairCar &ACChairCar::Type(){
 
 //class Sleeper
 
-Sleeper::Sleeper() : Sleeping3Tier(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+Sleeper::Sleeper() : Sleeping3Tier("Sleeper", false) {}
 Sleeper::~Sleeper() {}
-
-const string Sleeper::sName = "Sleeper";
-const bool Sleeper::sIsAC = false;
 
 const Sleeper &Sleeper::Type(){
     static const Sleeper sSleeper;
@@ -118,11 +97,8 @@ const Sleeper &Sleeper::Type(){
 
 //class SecondSitting
 
-SecondSitting::SecondSitting() : SittingClasses(sName, sIsAC, sIsLuxury, sLoadFactor) {}
+SecondSitting::SecondSitting() : SittingClasses("Second Sitting", false) {}
 SecondSitting::~SecondSitting() {}
-
-const string SecondSitting::sName = "Second Sitting";
-const bool SecondSitting::sIsAC = false;
 
 const SecondSitting &SecondSitting::Type(){
     static const SecondSitting sSecondSitting;

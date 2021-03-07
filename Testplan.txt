@@ -1,0 +1,114 @@
+UNIT TESTS
+
+1. Booking
+
+- Check static constants (Note that these constants are changeable from the Application space 
+                            and the tests are only for verifying if their value is being set properly.
+                            The tests below are based on the values currently set and may be changed by the user of the Application.)
+
+    STATIC CONSTANTS    GOLDEN VALUE
+    --------------------------------
+    sBaseFarePerKM      0.50
+    sACSurcharge        50.00
+    sLuxuryTaxPercent   25
+
+- Check next available PNR
+
+    STATIC              GOLDEN VALUE
+    --------------------------------
+    sBookingPNRSerial   one more than 
+                        total number of 
+                        bookings
+
+- Do a booking and check the different attributes
+
+    Booking from Delhi to Mumbai by AC 3 Tier for 16 March, 2021
+    
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    fromStation_    Delhi
+    toStation_      Mumbai
+    date_           16/Mar/2021
+    bookingClass_   AC3Tier
+    fare_           1316
+    pnr_            1
+    bookingStatus_  true
+    bookingMessage_ BOOKING SUCCEEDED
+
+- Check ComputeFare function separately matching its return value with the golden value of fare_
+- Check that the booking has been added to the static vector sBookings
+- Check that the next available PNR is now 2
+- Check the output streaming operator on the above booking
+
+
+2. Station
+
+Create a station Mumbai
+
+- Check the name_ attribute and GetName() method with the golden value "Mumbai"
+- Check the GetDistance() method with other stations
+
+    GetDistance()   GOLDEN VALUE
+    ----------------------------
+    Delhi           1447
+    Bangalore       981
+    Kolkata         2014
+    Chennai         1338
+
+- Check the output streaming operator on the above station
+
+
+3. Railways
+
+- Check for singleton property
+- Check GetDistance() method for a few pairs of stations specifically checking for symmetric property as well
+
+    GetDistance()       GOLDEN VALUE
+    --------------------------------
+    Delhi & Bangalore   2150
+    Bangalore & Delhi   2150
+    Delhi & Kolkata     1472
+    Chennai & Delhi     2180
+
+- Further checking of list of stations and dataset of the distances between them is done using the output streaming operator
+
+
+4. Date
+
+- Check all month names are properly loaded in sMonthNames
+- Check for proper construction by comparing date_, month_, year_ with golden values
+
+    Date(16, 3, 2001)
+
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    date_           16
+    month_          3
+    year_           2001
+
+- Check ToString() method with golden value "16/Mar/2001"
+- Check output streaming operator
+
+5. BookingClasses
+
+- Check for singleton property for each of the 7 concrete booking classes
+- Check the methods GetName(), GetLoadFactor(), GetNumberOfTiers(), IsSitting(), IsAC(), IsLuxury() for each of the 7 concrete booking
+    classes and match with the golden output given below
+
+        Method      GetName()       *GetLoadFactor()    GetNumberOfTiers()    IsSitting()    IsAC()    *IsLuxury()
+    Class
+    ----------------------------------------------------------------------------------------------------------------------------------
+    ACFirstClass    AC First Class  3.00                2                     False          True      True
+    AC2Tier         AC 2 Tier       2.00                2                     False          True      False
+    FirstClass      First Class     2.00                2                     False          False     True
+    AC3Tier         AC 3 Tier       1.75                3                     False          True      False
+    ACChairCar      AC Chair Car    1.25                0                     True           True      False
+    Sleeper         Sleeper         1.00                3                     False          False     False
+    SecondSitting   Second Sitting  0.50                0                     True           False     False
+
+    Methods marked with *
+    Note that these constants are changeable from the Application space and 
+    the tests are only for verifying if their value is being set properly.
+    The tests above are based on the values currently set and may be changed by the user of the Application.
+
+-Check the output streaming operator on each concrete class

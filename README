@@ -1,0 +1,22 @@
+COMPILATION COMMANDS
+
+UnitTestBooking
+    g++-10 -std=c++11 UnitTestBooking.cpp Application.cpp Booking.cpp Date.cpp Railways.cpp BookingClasses.cpp Station.cpp -o UnitTestBooking
+    ./UnitTestBooking
+
+UnitTestStation
+    g++-10 -std=c++11 UnitTestStation.cpp Railways.cpp Station.cpp -o UnitTestStation
+    ./UnitTestStation
+
+UnitTestRailways
+    g++-10 -std=c++11 UnitTestRailways.cpp Railways.cpp Station.cpp -o UnitTestRailways
+    ./UnitTestRailways
+
+UnitTestDate
+    g++-10 -std=c++11 UnitTestDate.cpp Date.cpp -o UnitTestDate
+    ./UnitTestDate
+
+ApplicationTests
+    g++-10 -std=c++11  ApplicationTests.cpp Application.cpp BookingClasses.cpp Railways.cpp Station.cpp Booking.cpp Date.cpp -o ApplicationTests
+    ./ApplicationTests
+

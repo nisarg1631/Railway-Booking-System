@@ -27,7 +27,10 @@ class Railways{
     public:
         static const Railways &IndianRailways();
         uint32_t GetDistance(const Station &, const Station &) const;
+
         friend ostream &operator<<(ostream &, const Railways &);
+
+        static void UnitTestRailways();
 };
 
 #endif

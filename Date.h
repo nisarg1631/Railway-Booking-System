@@ -20,8 +20,14 @@ class Date{
         Date(uint32_t, uint32_t, uint32_t);
         Date(const Date &);
         ~Date();
-        
+
+        inline string ToString() const{
+            return to_string(date_)+"/"+sMonthNames[month_-1]+"/"+to_string(year_);
+        }
+
         friend ostream &operator<<(ostream &, const Date &);
+
+        static void UnitTestDate();
 };
 
 #endif

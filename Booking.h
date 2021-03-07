@@ -30,14 +30,18 @@ class Booking{
         Booking(const Booking &);
         Booking &operator=(const Booking &);
     
+    protected:
+        virtual uint32_t ComputeFare() const;
+    
     public:
         static vector<Booking *> sBookings;
 
         Booking(const Station &, const Station &, const Date &, const BookingClasses &, const Person * = NULL);
         ~Booking();
 
-        void ComputeFare();
         friend ostream &operator<<(ostream &, const Booking &);
+
+        static void UnitTestBooking();
 };
 
 #endif

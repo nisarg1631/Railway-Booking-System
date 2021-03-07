@@ -1,11 +1,7 @@
-#include <iostream>
-
-using namespace std;
-
 #include "BookingClasses.h"
-#include "Railways.h"
 #include "Booking.h"
 
+// set the necessary parameters for the application here
 const bool ACFirstClass::sIsLuxury = true;
 const double ACFirstClass::sLoadFactor = 3.00;
 
@@ -30,11 +26,3 @@ const double SecondSitting::sLoadFactor = 0.50;
 const double Booking::sBaseFarePerKM = 0.50;
 const double Booking::sACSurcharge = 50.00;
 const double Booking::sLuxuryTaxPercent = 25;
-
-void debug_bookingclasses(const BookingClasses &obj){
-    cout<<obj<<endl;
-}
-
-void debug_railways(const Railways &obj){
-    cout<<obj<<endl;
-}
