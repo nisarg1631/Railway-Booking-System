@@ -1,7 +1,10 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
 #include "Booking.h"
 #include <cmath>
 
-uint32_t Booking::sBookingPNRSerial = 1;
+uint32_t Booking::sBookingPNRSerial = 1; //initialise static PNR serial with 1 at start of program
 vector<Booking *> Booking::sBookings;
 
 Booking::Booking(const Station &fromStation, const Station &toStation, const Date &date, const BookingClasses &bookingClass, const Person *person) :

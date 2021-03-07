@@ -1,5 +1,9 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
 #include "Date.h"
 
+// initialise month and day names
 const vector<string> Date::sMonthNames = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 const vector<string> Date::sDayNames = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 

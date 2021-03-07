@@ -1,6 +1,10 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
 #include "Railways.h"
 #include "Station.h"
 
+// initialise sStations and sDistStations
 const vector<Station> Railways::sStations = Railways::LoadStations();
 const unordered_map<string, unordered_map<string, uint32_t> > Railways::sDistStations = Railways::LoadRoutes();
 
@@ -37,6 +41,7 @@ const Railways &Railways::IndianRailways(){
     return sIndianRailways;
 }
 
+// returns distance between station1 and station2 using the master dataset sDistStations
 uint32_t Railways::GetDistance(const Station &station1, const Station &station2) const{
     return sDistStations.at(station1.GetName()).at(station2.GetName());
 }

@@ -1,3 +1,6 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
 #ifndef _PASSENGER_H
 #define _PASSENGER_H
 
@@ -19,7 +22,7 @@ class Passenger{
 
     protected:
         Passenger();
-        virtual ~Passenger();
+        virtual ~Passenger(); // virtual destructor for base class
         
     public:
         Passenger(const Passenger &);
@@ -29,7 +32,7 @@ class Passenger{
         string GetMobileNum() const;
         const Date &GetDateOfBirth() const;
         bool IsMale() const;
-        virtual string GetCategory() const = 0;
+        virtual string GetCategory() const = 0; // made virtual for Passenger hierarchy
         
         friend ostream &operator<<(ostream &, const Passenger &);
 };

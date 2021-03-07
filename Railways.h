@@ -1,3 +1,6 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
 #ifndef _RAILWAYS_H
 #define _RAILWAYS_H
 
@@ -18,6 +21,7 @@ class Railways{
         Railways(const Railways &);
         Railways &operator=(const Railways &);
 
+        // static containers to store the master data of the Indian Railways
         static const vector<Station> sStations;
         static const unordered_map<string, unordered_map<string, uint32_t> > sDistStations;
 
@@ -26,7 +30,7 @@ class Railways{
         static unordered_map<string, unordered_map<string, uint32_t> > LoadRoutes();
 
     public:
-        static const Railways &IndianRailways();
+        static const Railways &IndianRailways(); // Singleton Railways called IndianRailways
         uint32_t GetDistance(const Station &, const Station &) const;
 
         friend ostream &operator<<(ostream &, const Railways &);

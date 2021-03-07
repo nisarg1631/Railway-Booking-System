@@ -1,3 +1,6 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
 #ifndef _BOOKINGCLASSES_H
 #define _BOOKINGCLASSES_H
 
@@ -17,15 +20,17 @@ class BookingClasses{
 
     protected:
         BookingClasses(const string &, const bool &);
-        virtual ~BookingClasses();
+        virtual ~BookingClasses(); // virtual destructor in base class
 
     public:
+        // non-polymorphic member functions
         inline string GetName() const{
             return name_;
         }
         inline bool IsAC() const{
             return isAC_;
         }
+        // polymorphic member functions
         virtual bool IsLuxury() const = 0;
         virtual double GetLoadFactor() const = 0;
         virtual bool IsSitting() const = 0;
@@ -36,6 +41,7 @@ class BookingClasses{
         static void UnitTest();
 };
 
+// Booking Classes can be either Sitting or Sleeping (1st Level of Hierarchy)
 class SittingClasses : public BookingClasses{
 
     protected:
@@ -67,6 +73,7 @@ class SleepingClasses : public BookingClasses{
         static void UnitTest();
 };
 
+// Sleeping Classes can be either 2 Tier or 3 Tier (2nd Level of Hierarchy)
 class Sleeping2Tier : public SleepingClasses{
     
     protected:
@@ -95,6 +102,8 @@ class Sleeping3Tier : public SleepingClasses{
         static void UnitTest();
 };
 
+// Concrete Classes (Singletons)
+// In each of these Type() returns const singleton of the respective class 
 class ACFirstClass : public Sleeping2Tier{
 
     private:
