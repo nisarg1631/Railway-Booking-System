@@ -16,6 +16,7 @@ Booking::Booking(const Station &fromStation, const Station &toStation, const Dat
     }
 Booking::~Booking() {}
 
+// compute fare implemented based on the logic provided
 uint32_t Booking::ComputeFare() const{
     double fare = 0.0;
     fare += (static_cast<double>(fromStation_.GetDistance(toStation_)) * sBaseFarePerKM);

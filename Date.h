@@ -13,8 +13,10 @@ using namespace std;
 class Date{
 
     private:
+        // static containers to store the names of the months and days
         static const vector<string> sMonthNames;
         static const vector<string> sDayNames;
+        
         uint32_t date_, month_, year_;
 
         Date &operator=(const Date &);
@@ -24,6 +26,7 @@ class Date{
         Date(const Date &);
         ~Date();
 
+        // returns the date in a string format dd/mmm/yy
         inline string ToString() const{
             return to_string(date_)+"/"+sMonthNames[month_-1]+"/"+to_string(year_);
         }
