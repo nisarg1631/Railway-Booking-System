@@ -59,9 +59,7 @@ void RunOwnTests(){
 }
 
 int main(){
-    cout<<"Given Tests: \n"<<endl;
     RunGivenTests();
-    cout<<"Own Tests: \n"<<endl;
-    RunOwnTests();
+    // RunOwnTests();
     return 0;
 }
