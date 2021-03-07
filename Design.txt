@@ -1,0 +1,220 @@
+1. Booking Class
+
+Data members
+
+    - sBaseFarePerKM, sACSurcharge, sLuxuryTaxPercent : static const double with the initialisation given in Application.cpp
+        to make it easy to change their values (shared by all bookings for fare computation)
+    - sBookingPNRSerial : static non-const unsigned int as its value will change as bookings are done (shared by all bookings for
+        PNR allotment)
+    - sBookings : static non-const vector<Booking *> as bookings are inserted into it as they are done (a common shared database of all bookings
+        done so far)
+    - fromStation_ and toStation_ : non-static const Station
+    - date_ : non-static const Date
+    - bookingClass_ : non-static const reference to the respective singleton BookingClass
+    - fare_ and pnr_ : non-static unsigned int
+    - bookingStatus_ : non-static boolean
+    - string bookingMessage_ : non-static string
+
+Member functions
+
+    - ComputeFare [non-static const]
+        Returns - unsigned int
+        Params - None
+        Access - protected (made virtual, in case of a Booking hierarchy, derived classed may use fare computed by parent along with
+                            other charges added)
+    
+    - UnitTestBooking [static]
+        Returns - void
+        Params - None
+        Access - public
+
+Friend functions
+
+    - operator<<
+        Returns - ostream &
+        Params - ostream &, const Booking &
+
+2. Station Class
+
+Data members
+
+    - name_ : non-static const string
+
+Member functions
+
+    - GetName [non-static const]
+        Returns - string
+        Params - None
+        Access - public
+    
+    - GetDistance [non-static const]
+        Returns - unsigned int
+        Params - const Station &
+        Access - public
+    
+    - UnitTestStation [static]
+        Returns - void
+        Params - None
+        Access - public
+    
+Friend functions
+
+    - operator<<
+        Returns - ostream &
+        Params - ostream &, const Station &
+
+
+3. BookingClasses
+
+- Hierarchy Design
+
+    BookingClasses
+        |
+        |-  SittingClasses
+        |       |
+        |       |-  ACChairCar
+        |       |-  SecondSitting
+        |
+        |-  SleepingClasses
+                |
+                |-  Sleeping2Tier
+                |       |
+                |       |-  ACFirstClass
+                |       |-  AC2Tier
+                |       |-  FirstClass
+                |
+                |-  Sleeping3Tier
+                        |
+                        |-  AC3Tier
+                        |-  Sleeper
+
+The following points were kept in mind while designing the hierarchy, data members of respective classes, and the polymorphic and
+non-polymorphic methods:
+
+    1. Load Factors and Luxury Classification may change from time to time
+    2. Seat/Berth, AC/Non-AC, and Number Of Tiers will not change with time
+
+Hierarchy
+    Seat/Berth and its closest associate Number Of Tiers were identified as the strong candidates for the hierarchy design.
+
+Data members
+    With Seat/Berth and Number Of Tiers classification incorporated into the hierarchy, it leaves us with Load Factors, 
+    Luxury Classification and AC/Non-AC classification.
+    
+    As the former two are changeable parameters, they are made static const in each of the 7 concrete booking classes 
+    with the initialisation given in the application space to make the design flexible.
+
+    That leaves us with AC/Non-AC classification and the name of the booking class which are made const attributes in the 
+    BookingClasses base class with initialisation through the constructor.
+
+Polymorphic and non-polymorphic methods
+    As the name and AC/Non-AC classification are attributes in the base class the GetName() and IsAC() methods are non-polymorphic.
+
+    The remaining, i.e., GetNumberOfTiers(), IsSitting(), IsLuxury() and GetLoadFactor() are pure polymorphic in the base class.
+
+    IsSitting() is implemented according to the hierarchy in SittingClasses and SleepingClasses
+
+    GetNumberOfTiers() is implemented according to the hierarchy in SittingClasses, Sleeping2Tier, and Sleeping3Tier
+    
+    IsLuxury() and GetLoadFactor() are implemented at the concrete class level where the static const for the respective attributes
+    are declared.
+
+Thus, we have the following data members:
+    1. const string name_ and const bool isAC_ in the base class (BookingClasses)
+    2. static const bool sIsLuxury and static const double sLoadFactor in each of the 7 concrete classes
+
+and the following methods:
+    GetName(), IsAC(), GetNumberOfTiers(), IsSitting(), IsLuxury() and GetLoadFactor().
+    Each of this is a non-static const function which takes no parameter and returns the respective attribute.
+
+    Static functions for unit testing are provided throughout the hierarchy
+
+    Friend function
+        - operator<<
+            Returns - ostream &
+            Params - ostream &, const BookingClasses &
+
+
+4. Date Class
+
+Data members
+
+    - sMonthNames, sDayNames : static const vector<string> (shared by all dates for getting month and day names in string format)
+    - date_, month_, year_ : non-static unsigned int
+
+Member functions
+
+    - ToString [non-static const]
+        Returns - string
+        Params - None
+        Access - public
+
+    - UnitTestDate [static]
+        Returns - void
+        Params - None
+        Access - public
+
+Friend functions
+
+    - operator<<
+        Returns - ostream &
+        Params - ostream &, const Date &
+
+
+5. Railways Class [MEYER'S SINGLETON]
+
+Data members
+
+    - sStations : static const vector<Station> (collection of all stations)
+    - sDistStations : static const unordered_map<string, unordered_map<string, unsigned int> > 
+                        (shared database of distances between all pairs of stations in a 2D hash table)
+
+Member functions
+
+    - IndianRailways() [static] (Meyer's Singleton Implementation)
+        Returns - const Railways &
+        Params - None
+        Access - public
+    
+    - GetDistance [non-static const]
+        Returns - unsigned int
+        Params - const Station &, const Station &
+        Access - public
+
+    Utility functions
+
+        - LoadStations [static]
+            Returns - vector<Station>
+            Params - None
+            Access - private
+            
+        - LoadRoutes [static]
+            Returns - unordered_map<string, unordered_map<string, unsigned int> >
+            Params - None
+            Access - private
+
+Friend functions
+
+    - operator<<
+        Returns - ostream &
+        Params - ostream &, const Railways &
+
+
+6. Passenger (Not implemented, abstract base class for passenger hierarchy)
+
+Data members
+
+    - name_, aadharNum_, mobileNum_ : non-static const string
+    - dateOfBirth_ : non-static const Date
+    - isMale_ : non-static const bool
+
+Member functions
+
+    - const "Get" methods for accessing the data members
+    - GetCategory() is a pure virtual method to be implemented in the hierarchy
+
+Friend functions
+
+    - operator<<
+        Returns - ostream &
+        Params - ostream &, const Passenger &

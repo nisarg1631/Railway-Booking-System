@@ -1,3 +1,6 @@
+COMPILER USED: g++ (Version 10.1.0)
+C++ STANDARD: C++11
+
 COMPILATION COMMANDS
 
 UnitTestBooking
@@ -15,6 +18,10 @@ UnitTestRailways
 UnitTestDate
     g++-10 -std=c++11 UnitTestDate.cpp Date.cpp -o UnitTestDate
     ./UnitTestDate
+
+UnitTestBookingClasses
+    g++-10 -std=c++11 UnitTestBookingClasses.cpp Application.cpp BookingClasses.cpp -o UnitTestBookingClasses
+    ./UnitTestBookingClasses
 
 ApplicationTests
     g++-10 -std=c++11  ApplicationTests.cpp Application.cpp BookingClasses.cpp Railways.cpp Station.cpp Booking.cpp Date.cpp -o ApplicationTests

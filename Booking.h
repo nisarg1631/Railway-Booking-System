@@ -10,7 +10,7 @@ using namespace std;
 #include "BookingClasses.h"
 #include "Date.h"
 
-class Person;
+class Person; // forward decalration, class is not implemented
 
 class Booking{
 

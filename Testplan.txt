@@ -98,7 +98,7 @@ Create a station Mumbai
 
         Method      GetName()       *GetLoadFactor()    GetNumberOfTiers()    IsSitting()    IsAC()    *IsLuxury()
     Class
-    ----------------------------------------------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------------------------
     ACFirstClass    AC First Class  3.00                2                     False          True      True
     AC2Tier         AC 2 Tier       2.00                2                     False          True      False
     FirstClass      First Class     2.00                2                     False          False     True

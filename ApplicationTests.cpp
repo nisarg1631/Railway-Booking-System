@@ -12,6 +12,7 @@ void RunGivenTests(){
     Booking b6(Station("Chennai"), Station("Kolkata"), Date(7, 5, 2021), Sleeper::Type());
     Booking b7(Station("Mumbai"), Station("Delhi"), Date(19, 5, 2021), SecondSitting::Type());
     Booking b8(Station("Delhi"), Station("Mumbai"), Date(22, 5, 2021), SecondSitting::Type());
+    
     vector<Booking*>::iterator it;
     for (it = Booking::sBookings.begin(); it < Booking::sBookings.end(); ++it)
         cout << *(*it);
@@ -48,6 +49,7 @@ void RunOwnTests(){
     Booking b25(Station("Chennai"), Station("Delhi"), Date(16, 3, 2021), Sleeper::Type());
     Booking b26(Station("Chennai"), Station("Bangalore"), Date(16, 3, 2021), Sleeper::Type());
     Booking b27(Station("Chennai"), Station("Kolkata"), Date(16, 3, 2021), Sleeper::Type()); 
+
     vector<Booking*>::iterator it;
     for (it = Booking::sBookings.begin(); it < Booking::sBookings.end(); ++it)
         cout << *(*it);

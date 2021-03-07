@@ -21,6 +21,7 @@ class Railways{
         static const vector<Station> sStations;
         static const unordered_map<string, unordered_map<string, uint32_t> > sDistStations;
 
+        // utility functions to initialise sStations and sDistStations
         static vector<Station> LoadStations();
         static unordered_map<string, unordered_map<string, uint32_t> > LoadRoutes();
 
