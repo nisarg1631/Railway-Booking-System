@@ -1,4 +1,5 @@
-UNIT TESTS
+UNIT TESTS [If everything is running right then the Unit Tests will only print the 
+            output from the output streaming operator of the respective class and nothing else]
 
 1. Booking
 
@@ -111,4 +112,38 @@ Create a station Mumbai
     the tests are only for verifying if their value is being set properly.
     The tests above are based on the values currently set and may be changed by the user of the Application.
 
--Check the output streaming operator on each concrete class
+- Check the output streaming operator on each concrete class
+- We check the polymorphic methods in the abstract base classes and the two non-polymorphic methods in BookingClasses
+
+    -BookingClasses
+        Check the GetName() and IsAC() methods for functionality. Golden values depend on the specialization used for testing.
+    
+    -SittingClasses
+        Check the IsSitting() method (golden value: true) and GetNumberOfTiers() method (golden value: 0)
+    
+    -SleepingClasses
+        Check the IsSitting() method (golden value: false)
+    
+    -Sleeping2Tier
+        Check the GetNumberOfTiers() method (golden value: 2)
+    
+    -Sleeping3Tier
+        Check the GetNumberOfTiers() method (golden value: 3)
+
+
+
+APPLICATION TESTS
+
+1. Given Tests
+    Ran the given tests. The output has been put to OutputGivenTests.txt file.
+
+2. Own Tests
+    
+    Exhaustive Test Plan split into two parts
+
+        a. Check all classes for a particular pair of stations [7 tests, All class bookings from Delhi to Chennai]
+            This ensures logic for fare computation for different classes is working fine
+        b. Check all ordered pairs of stations for a particular class [20 Tests, All possible ordered pairs of stations in Sleeper]
+            This ensures logic for fare computation between different pairs of stations is working fine
+    
+    The output has been put to OutputOwnTests.txt file.

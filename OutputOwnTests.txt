@@ -1,0 +1,323 @@
+BOOKING SUCCEEDED:
+PNR Number = 1
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = AC First Class
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: Yes
+Fare = 4150
+
+BOOKING SUCCEEDED:
+PNR Number = 2
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = AC 2 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: No
+Fare = 2230
+
+BOOKING SUCCEEDED:
+PNR Number = 3
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = First Class
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 2
+        -Luxury: Yes
+Fare = 2725
+
+BOOKING SUCCEEDED:
+PNR Number = 4
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = AC 3 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1958
+
+BOOKING SUCCEEDED:
+PNR Number = 5
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = AC Chair Car
+        -Mode: Sitting
+        -Comfort: AC
+        -Bunks: 0
+        -Luxury: No
+Fare = 1413
+
+BOOKING SUCCEEDED:
+PNR Number = 6
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1090
+
+BOOKING SUCCEEDED:
+PNR Number = 7
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = Second Sitting
+        -Mode: Sitting
+        -Comfort: Non-AC
+        -Bunks: 0
+        -Luxury: No
+Fare = 545
+
+BOOKING SUCCEEDED:
+PNR Number = 8
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 724
+
+BOOKING SUCCEEDED:
+PNR Number = 9
+From Station = Mumbai
+To Station = Bangalore
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 491
+
+BOOKING SUCCEEDED:
+PNR Number = 10
+From Station = Mumbai
+To Station = Kolkata
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1007
+
+BOOKING SUCCEEDED:
+PNR Number = 11
+From Station = Mumbai
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 669
+
+BOOKING SUCCEEDED:
+PNR Number = 12
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 724
+
+BOOKING SUCCEEDED:
+PNR Number = 13
+From Station = Delhi
+To Station = Bangalore
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1075
+
+BOOKING SUCCEEDED:
+PNR Number = 14
+From Station = Delhi
+To Station = Kolkata
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 736
+
+BOOKING SUCCEEDED:
+PNR Number = 15
+From Station = Delhi
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1090
+
+BOOKING SUCCEEDED:
+PNR Number = 16
+From Station = Bangalore
+To Station = Mumbai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 491
+
+BOOKING SUCCEEDED:
+PNR Number = 17
+From Station = Bangalore
+To Station = Delhi
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1075
+
+BOOKING SUCCEEDED:
+PNR Number = 18
+From Station = Bangalore
+To Station = Kolkata
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 936
+
+BOOKING SUCCEEDED:
+PNR Number = 19
+From Station = Bangalore
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 175
+
+BOOKING SUCCEEDED:
+PNR Number = 20
+From Station = Kolkata
+To Station = Mumbai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1007
+
+BOOKING SUCCEEDED:
+PNR Number = 21
+From Station = Kolkata
+To Station = Delhi
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 736
+
+BOOKING SUCCEEDED:
+PNR Number = 22
+From Station = Kolkata
+To Station = Bangalore
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 936
+
+BOOKING SUCCEEDED:
+PNR Number = 23
+From Station = Kolkata
+To Station = Chennai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 830
+
+BOOKING SUCCEEDED:
+PNR Number = 24
+From Station = Chennai
+To Station = Mumbai
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 669
+
+BOOKING SUCCEEDED:
+PNR Number = 25
+From Station = Chennai
+To Station = Delhi
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 1090
+
+BOOKING SUCCEEDED:
+PNR Number = 26
+From Station = Chennai
+To Station = Bangalore
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 175
+
+BOOKING SUCCEEDED:
+PNR Number = 27
+From Station = Chennai
+To Station = Kolkata
+Travel Date = 16/Mar/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Fare = 830

@@ -23,15 +23,15 @@ void Booking::UnitTestBooking(){
         cout<<"Incorrect date_ in Booking."<<endl;
     if(&booking.bookingClass_ != &AC3Tier::Type())
         cout<<"Incorrect bookingClass_ in Booking."<<endl;
-    if(booking.fare_ != 1316)
+    if(booking.fare_ != 1316U)
         cout<<"Incorrect fare_ in Booking."<<endl;
-    if(booking.pnr_ != 1)
+    if(booking.pnr_ != 1U)
         cout<<"Incorrect pnr_ in Booking."<<endl;
     if(booking.bookingStatus_ != true)
         cout<<"Incorrect bookingStatus_ in Booking."<<endl;
     if(booking.bookingMessage_ != "BOOKING SUCCEEDED")
         cout<<"Incorrect bookingMessage_ in Booking."<<endl;
-    if(booking.ComputeFare() != 1316)
+    if(booking.ComputeFare() != 1316U)
         cout<<"Incorrect fare computation by ComputeFare() in Booking."<<endl;
 
     // checking that the booking has been added to sBookings
@@ -39,7 +39,7 @@ void Booking::UnitTestBooking(){
         cout<<"Booking not added to static vector sBookings in Booking."<<endl;
     
     // checking that next available PNR is now updated
-    if(sBookingPNRSerial != 2)
+    if(sBookingPNRSerial != 2U)
         cout<<"Next available PNR not updated in Booking."<<endl;
     
     // checking the output streaming operator

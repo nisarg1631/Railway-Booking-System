@@ -10,8 +10,8 @@ void Station::UnitTestStation(){
         cout<<"Incorrect return value by GetName() in Station."<<endl;
     
     // check GetDistance method with other stations
-    if(mumbai.GetDistance(Station("Delhi")) != 1447 || mumbai.GetDistance(Station("Bangalore")) != 981 || 
-        mumbai.GetDistance(Station("Kolkata")) != 2014 || mumbai.GetDistance(Station("Chennai")) != 1338)
+    if(mumbai.GetDistance(Station("Delhi")) != 1447U || mumbai.GetDistance(Station("Bangalore")) != 981U || 
+        mumbai.GetDistance(Station("Kolkata")) != 2014U || mumbai.GetDistance(Station("Chennai")) != 1338U)
         cout<<"Incorrect return value by GetDistance() in Station."<<endl;
     
     // check the output streaming operator

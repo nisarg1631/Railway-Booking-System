@@ -29,11 +29,11 @@ void Date::UnitTestDate(){
 
     Date myBirthday(16, 3, 2001);
 
-    if(myBirthday.date_ != 16)
+    if(myBirthday.date_ != 16U)
         cout<<"Incorrect date_ in Date."<<endl;
-    if(myBirthday.month_ != 3)
+    if(myBirthday.month_ != 3U)
         cout<<"Incorrect month_ in Date."<<endl;
-    if(myBirthday.year_ != 2001)
+    if(myBirthday.year_ != 2001U)
         cout<<"Incorrect year_ in Date."<<endl;
 
     // check ToString method

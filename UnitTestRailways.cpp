@@ -18,8 +18,8 @@ void Railways::UnitTestRailways(){
         cout<<"GetDistance() doesn't return symmetric value for pair of stations in Railways."<<endl;
     
     // check a few distances
-    if(railways.GetDistance(delhi, bangalore) != 2150 || railways.GetDistance(delhi, kolkata) != 1472 ||
-        railways.GetDistance(delhi, chennai) != 2180)
+    if(railways.GetDistance(delhi, bangalore) != 2150U || railways.GetDistance(delhi, kolkata) != 1472U ||
+        railways.GetDistance(delhi, chennai) != 2180U)
         cout<<"GetDistance() doesn't return correct value in Railways."<<endl;
     
     // check output streaming operator
