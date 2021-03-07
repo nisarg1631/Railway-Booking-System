@@ -12,7 +12,7 @@ using namespace std;
 class Station{
 
     private:
-        const string name_;
+        const string name_; // Station is a simple data class identified by its name_
 
         Station &operator=(const Station &);
 

@@ -59,8 +59,9 @@ void RunOwnTests(){
 }
 
 int main(){
-    // call the test application function here
+    cout<<"Given Tests: \n"<<endl;
     RunGivenTests();
-    // RunOwnTests();
+    cout<<"Own Tests: \n"<<endl;
+    RunOwnTests();
     return 0;
 }

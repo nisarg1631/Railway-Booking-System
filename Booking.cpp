@@ -12,7 +12,7 @@ Booking::Booking(const Station &fromStation, const Station &toStation, const Dat
         bookingStatus_ = true;
         bookingMessage_ = "BOOKING SUCCEEDED";
         fare_ = ComputeFare();
-        sBookings.push_back(this);
+        sBookings.push_back(this); //store the pointer to the present booking in sBookings
     }
 Booking::~Booking() {}
 
