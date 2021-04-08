@@ -3,6 +3,7 @@
 
 #include "BookingClasses.h"
 #include "Booking.h"
+#include "Concession.h"
 
 // set the necessary parameters for the application here
 const double Booking::sBaseFarePerKM = 0.50;
@@ -116,3 +117,7 @@ template<> const double BookingClasses::SecondSitting::sTBConcessionFactor = 0.7
 // senior citizen concession factors
 template<> const double Gender::Male::sSeniorCitizenConcessionFactor = 0.40;
 template<> const double Gender::Female::sSeniorCitizenConcessionFactor = 0.50;
+
+// other concession factors
+const double GeneralConcession::sConcessionFactor = 0.00;
+const double LadiesConcession::sConcessionFactor = 0.00;
