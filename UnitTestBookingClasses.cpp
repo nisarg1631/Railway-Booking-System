@@ -5,8 +5,8 @@
 
 template<>
 void BookingClasses::ACFirstClass::UnitTest(){
-    const BookingClasses::ACFirstClass &obj = BookingClasses::ACFirstClass::Type();
-    const BookingClasses::ACFirstClass &objCopy = BookingClasses::ACFirstClass::Type();
+    const BookingClasses &obj = BookingClasses::ACFirstClass::Type();
+    const BookingClasses &objCopy = BookingClasses::ACFirstClass::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -40,8 +40,8 @@ void BookingClasses::ACFirstClass::UnitTest(){
 
 template<>
 void BookingClasses::ExecutiveChairCar::UnitTest(){
-    const BookingClasses::ExecutiveChairCar &obj = BookingClasses::ExecutiveChairCar::Type();
-    const BookingClasses::ExecutiveChairCar &objCopy = BookingClasses::ExecutiveChairCar::Type();
+    const BookingClasses &obj = BookingClasses::ExecutiveChairCar::Type();
+    const BookingClasses &objCopy = BookingClasses::ExecutiveChairCar::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -75,8 +75,8 @@ void BookingClasses::ExecutiveChairCar::UnitTest(){
 
 template<>
 void BookingClasses::AC2Tier::UnitTest(){
-    const BookingClasses::AC2Tier &obj = BookingClasses::AC2Tier::Type();
-    const BookingClasses::AC2Tier &objCopy = BookingClasses::AC2Tier::Type();
+    const BookingClasses &obj = BookingClasses::AC2Tier::Type();
+    const BookingClasses &objCopy = BookingClasses::AC2Tier::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -110,8 +110,8 @@ void BookingClasses::AC2Tier::UnitTest(){
 
 template<>
 void BookingClasses::FirstClass::UnitTest(){
-    const BookingClasses::FirstClass &obj = BookingClasses::FirstClass::Type();
-    const BookingClasses::FirstClass &objCopy = BookingClasses::FirstClass::Type();
+    const BookingClasses &obj = BookingClasses::FirstClass::Type();
+    const BookingClasses &objCopy = BookingClasses::FirstClass::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -145,8 +145,8 @@ void BookingClasses::FirstClass::UnitTest(){
 
 template<>
 void BookingClasses::AC3Tier::UnitTest(){
-    const BookingClasses::AC3Tier &obj = BookingClasses::AC3Tier::Type();
-    const BookingClasses::AC3Tier &objCopy = BookingClasses::AC3Tier::Type();
+    const BookingClasses &obj = BookingClasses::AC3Tier::Type();
+    const BookingClasses &objCopy = BookingClasses::AC3Tier::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -180,8 +180,8 @@ void BookingClasses::AC3Tier::UnitTest(){
 
 template<>
 void BookingClasses::ACChairCar::UnitTest(){
-    const BookingClasses::ACChairCar &obj = BookingClasses::ACChairCar::Type();
-    const BookingClasses::ACChairCar &objCopy = BookingClasses::ACChairCar::Type();
+    const BookingClasses &obj = BookingClasses::ACChairCar::Type();
+    const BookingClasses &objCopy = BookingClasses::ACChairCar::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -215,8 +215,8 @@ void BookingClasses::ACChairCar::UnitTest(){
 
 template<>
 void BookingClasses::Sleeper::UnitTest(){
-    const BookingClasses::Sleeper &obj = BookingClasses::Sleeper::Type();
-    const BookingClasses::Sleeper &objCopy = BookingClasses::Sleeper::Type();
+    const BookingClasses &obj = BookingClasses::Sleeper::Type();
+    const BookingClasses &objCopy = BookingClasses::Sleeper::Type();
 
     // check for singleton
     if(&obj != &objCopy)
@@ -250,8 +250,8 @@ void BookingClasses::Sleeper::UnitTest(){
 
 template<>
 void BookingClasses::SecondSitting::UnitTest(){
-    const BookingClasses::SecondSitting &obj = BookingClasses::SecondSitting::Type();
-    const BookingClasses::SecondSitting &objCopy = BookingClasses::SecondSitting::Type();
+    const BookingClasses &obj = BookingClasses::SecondSitting::Type();
+    const BookingClasses &objCopy = BookingClasses::SecondSitting::Type();
 
     // check for singleton
     if(&obj != &objCopy)

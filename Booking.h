@@ -32,10 +32,6 @@ class Booking{
         static const double sBaseFarePerKM; // static const required for fare computation
         static uint32_t sBookingPNRSerial;  // static to assign unique PNRs to bookings in a sequential order
 
-        virtual uint32_t ComputeFare() const = 0;
-        Booking(const Station &, const Station &, const Date &, const BookingClasses &, const Passenger * = NULL);
-        virtual ~Booking();
-
         const Station &fromStation_, &toStation_;
         const Date dateOfBooking_, dateOfReservation_;
         const BookingClasses &bookingClass_; // const reference to the singleton booking class
@@ -44,11 +40,18 @@ class Booking{
         uint32_t pnr_;
         bool bookingStatus_;
         string bookingMessage_;
+
+        virtual uint32_t ComputeFare() const = 0;
+        Booking(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &);
+        virtual ~Booking();
     
     public:
+        // static function to make any reservation, it calls the MakeReservation of the BookingCategory passed which creates an appropriate Booking sub-type (virtual constructor idiom)
         static void MakeReservation(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &, const BookingCategory &);
+        // static function to print all bookings made so far
         static void PrintBookings();
 
+        // sub-types
         typedef BookingTypes<Categories::GeneralType> GeneralBooking;
         typedef BookingTypes<Categories::LadiesType> LadiesBooking;
         typedef BookingTypes<Categories::SeniorCitizenType> SeniorCitizenBooking;

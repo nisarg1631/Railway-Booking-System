@@ -38,9 +38,7 @@ class BookingClasses{
         virtual ~BookingClasses();
     
     public:
-        inline string GetName() const{
-            return name_;
-        }
+        string GetName() const;
         // virtual functions for getting information about a specific class
         virtual bool IsAC() const = 0;
         virtual bool IsLuxury() const = 0;
@@ -115,6 +113,9 @@ template<typename T> inline const BookingClassesTypes<T> &BookingClassesTypes<T>
 }
 
 // inline functions for getting information about the class
+inline string BookingClasses::GetName() const{
+    return name_;
+}
 template<typename T> inline bool BookingClassesTypes<T>::IsAC() const{
     return sAC;
 }

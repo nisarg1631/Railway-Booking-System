@@ -27,11 +27,9 @@ class Gender{
         virtual ~Gender();
 
     public:
-        inline string GetName() const{ 
-            return name_; 
-        }
+        string GetName() const;
 
-        virtual const string GetTitle() const = 0;
+        virtual string GetTitle() const = 0;
         static bool IsMale(const Gender &);
 
         // enumerated types
@@ -54,9 +52,14 @@ class GenderTypes : public Gender{
         static const GenderTypes<T> &Type();
 
         string GetTitle() const;
+
+        static void UnitTest();
 };
 
 // gender implementation
+inline string Gender::GetName() const{ 
+    return name_; 
+}
 inline bool Gender::IsMale(const Gender& g){ 
     return &g == &Gender::Male::Type(); 
 }
