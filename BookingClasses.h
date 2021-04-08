@@ -51,6 +51,12 @@ class BookingClasses{
         virtual double GetMaximumTatkalCharge() const = 0;
         virtual uint32_t GetMinimumTatkalDistance() const = 0;
 
+        // virtual functions for getting divyaang concession factors of a specific class
+        virtual double GetBlindConcessionFactor() const = 0;
+        virtual double GetOrthopaedicallyHandicapedConcessionFactor() const = 0;
+        virtual double GetCancerConcessionFactor() const = 0;
+        virtual double GetTBConcessionFactor() const = 0;
+
         // enumerated types
         typedef BookingClassesTypes<ACFirstClassType> ACFirstClass;        
         typedef BookingClassesTypes<ExecutiveChairCarType> ExecutiveChairCar;        
@@ -69,6 +75,7 @@ class BookingClasses{
 template<typename T>
 class BookingClassesTypes : public BookingClasses{
     private:
+        // static constants for class attributes
         static const string sName;
         static const bool sAC;
         static const bool sLuxury;
@@ -80,6 +87,12 @@ class BookingClassesTypes : public BookingClasses{
         static const double sMinimumTatkalCharge;
         static const double sMaximumTatkalCharge;
         static const uint32_t sMinimumTatkalDistance;
+
+        // static constants for divyaang concession factors which are closely related to classes, hence were moved here instead of keeping them in the sub-types of Divyaang classes, made it easy to access the relevant concession factor through dynamic dispatch instead of the initially thought approach involving overloading
+        static const double sBlindConcessionFactor;
+        static const double sOrthopaedicallyHandicapedConcessionFactor;
+        static const double sCancerConcessionFactor;
+        static const double sTBConcessionFactor;
 
         // private constructor and destructor
         BookingClassesTypes();
@@ -99,6 +112,11 @@ class BookingClassesTypes : public BookingClasses{
         double GetMinimumTatkalCharge() const;
         double GetMaximumTatkalCharge() const;
         uint32_t GetMinimumTatkalDistance() const;
+
+        double GetBlindConcessionFactor() const;
+        double GetOrthopaedicallyHandicapedConcessionFactor() const;
+        double GetCancerConcessionFactor() const;
+        double GetTBConcessionFactor() const;
 
         // unit testing function
         static void UnitTest();
@@ -145,6 +163,18 @@ template<typename T> inline double BookingClassesTypes<T>::GetMaximumTatkalCharg
 }
 template<typename T> inline uint32_t BookingClassesTypes<T>::GetMinimumTatkalDistance() const{
     return sMinimumTatkalDistance;
+}
+template<typename T> inline double BookingClassesTypes<T>::GetBlindConcessionFactor() const{
+    return sBlindConcessionFactor;
+}
+template<typename T> inline double BookingClassesTypes<T>::GetOrthopaedicallyHandicapedConcessionFactor() const{
+    return sOrthopaedicallyHandicapedConcessionFactor;
+}
+template<typename T> inline double BookingClassesTypes<T>::GetCancerConcessionFactor() const{
+    return sCancerConcessionFactor;
+}
+template<typename T> inline double BookingClassesTypes<T>::GetTBConcessionFactor() const{
+    return sTBConcessionFactor;
 }
 
 #endif

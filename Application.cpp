@@ -71,3 +71,48 @@ template<> const double BookingClasses::SecondSitting::sTatkalLoadFactor = 0.10;
 template<> const double BookingClasses::SecondSitting::sMinimumTatkalCharge = 10.00;
 template<> const double BookingClasses::SecondSitting::sMaximumTatkalCharge = 15.00;
 template<> const uint32_t BookingClasses::SecondSitting::sMinimumTatkalDistance = 100;
+
+// divyaang concession factors of various classes
+template<> const double BookingClasses::ACFirstClass::sBlindConcessionFactor = 0.50;
+template<> const double BookingClasses::ACFirstClass::sOrthopaedicallyHandicapedConcessionFactor = 0.50;
+template<> const double BookingClasses::ACFirstClass::sCancerConcessionFactor = 0.50;
+template<> const double BookingClasses::ACFirstClass::sTBConcessionFactor = 0.00;
+
+template<> const double BookingClasses::ExecutiveChairCar::sBlindConcessionFactor = 0.75;
+template<> const double BookingClasses::ExecutiveChairCar::sOrthopaedicallyHandicapedConcessionFactor = 0.75;
+template<> const double BookingClasses::ExecutiveChairCar::sCancerConcessionFactor = 0.75;
+template<> const double BookingClasses::ExecutiveChairCar::sTBConcessionFactor = 0.00;
+
+template<> const double BookingClasses::AC2Tier::sBlindConcessionFactor = 0.50;
+template<> const double BookingClasses::AC2Tier::sOrthopaedicallyHandicapedConcessionFactor = 0.50;
+template<> const double BookingClasses::AC2Tier::sCancerConcessionFactor = 0.50;
+template<> const double BookingClasses::AC2Tier::sTBConcessionFactor = 0.00;
+
+template<> const double BookingClasses::FirstClass::sBlindConcessionFactor = 0.75;
+template<> const double BookingClasses::FirstClass::sOrthopaedicallyHandicapedConcessionFactor = 0.75;
+template<> const double BookingClasses::FirstClass::sCancerConcessionFactor = 0.75;
+template<> const double BookingClasses::FirstClass::sTBConcessionFactor = 0.75;
+
+template<> const double BookingClasses::AC3Tier::sBlindConcessionFactor = 0.75;
+template<> const double BookingClasses::AC3Tier::sOrthopaedicallyHandicapedConcessionFactor = 0.75;
+template<> const double BookingClasses::AC3Tier::sCancerConcessionFactor = 1.00;
+template<> const double BookingClasses::AC3Tier::sTBConcessionFactor = 0.00;
+
+template<> const double BookingClasses::ACChairCar::sBlindConcessionFactor = 0.75;
+template<> const double BookingClasses::ACChairCar::sOrthopaedicallyHandicapedConcessionFactor = 0.75;
+template<> const double BookingClasses::ACChairCar::sCancerConcessionFactor = 1.00;
+template<> const double BookingClasses::ACChairCar::sTBConcessionFactor = 0.00;
+
+template<> const double BookingClasses::Sleeper::sBlindConcessionFactor = 0.75;
+template<> const double BookingClasses::Sleeper::sOrthopaedicallyHandicapedConcessionFactor = 0.75;
+template<> const double BookingClasses::Sleeper::sCancerConcessionFactor = 1.00;
+template<> const double BookingClasses::Sleeper::sTBConcessionFactor = 0.75;
+
+template<> const double BookingClasses::SecondSitting::sBlindConcessionFactor = 0.75;
+template<> const double BookingClasses::SecondSitting::sOrthopaedicallyHandicapedConcessionFactor = 0.75;
+template<> const double BookingClasses::SecondSitting::sCancerConcessionFactor = 1.00;
+template<> const double BookingClasses::SecondSitting::sTBConcessionFactor = 0.75;
+
+// senior citizen concession factors
+template<> const double Gender::Male::sSeniorCitizenConcessionFactor = 0.40;
+template<> const double Gender::Female::sSeniorCitizenConcessionFactor = 0.50;

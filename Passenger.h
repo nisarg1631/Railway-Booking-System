@@ -24,18 +24,18 @@ class Passenger{
         const Divyaang &disabilityType_;
         const string disabilityID_;
 
-        // constructor and destructor made private to ensure they are not called directly with erroneous inputs
+        // constructor made private to ensure it is not called directly with erroneous inputs
         Passenger(const Name &, const string &, const string &, const Date &, const Gender &, const Divyaang &, const string &);
-        ~Passenger();
 
-        // blocked copy assignment operator and copy constructor
+        // blocked copy assignment operator
         Passenger &operator=(const Passenger &);
 
     public:
         Passenger(const Passenger &);
+        ~Passenger();
 
         // creates a new passenger object if valid data is provided, otherwise raises an exception
-        static Passenger CreatePassenger(const Name &, const string &, const string &, const Date &, const Gender &, const Divyaang &, const string &);
+        static Passenger CreatePassenger(const Name &, const string &, const string &, const Date &, const Gender &, const Divyaang & = Divyaang::None::Type(), const string & = "");
 
         const Name &GetName() const;
         string GetAadharNum() const;
@@ -45,7 +45,10 @@ class Passenger{
         const Divyaang &GetDisabilityType() const;
         string GetDisabilityID() const;
         
+        // output streaming operator
         friend ostream &operator<<(ostream &, const Passenger &);
+
+        static void UnitTestPassenger();
 };
 
 inline const Name &Passenger::GetName() const{

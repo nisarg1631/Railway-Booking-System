@@ -17,6 +17,8 @@ void Gender::Male::UnitTest(){
         cout<<"Failed GetName test. Line number: "<<__LINE__<<endl;
     if(obj.GetTitle() != "Mr.")
         cout<<"Failed GetTitle test. Line number: "<<__LINE__<<endl;
+    if(abs(obj.GetSeniorCitizenConcessionFactor()-0.4) > 1e-6)
+        cout<<"Failed GetSeniorCitizenConcessionFactor test. Line number: "<<__LINE__<<endl;
     if(!Gender::IsMale(obj))
         cout<<"Failed IsMale test. Line number: "<<__LINE__<<endl;
 }
@@ -35,6 +37,8 @@ void Gender::Female::UnitTest(){
         cout<<"Failed GetName test. Line number: "<<__LINE__<<endl;
     if(obj.GetTitle() != "Ms.")
         cout<<"Failed GetTitle test. Line number: "<<__LINE__<<endl;
+    if(abs(obj.GetSeniorCitizenConcessionFactor()-0.5) > 1e-6)
+        cout<<"Failed GetSeniorCitizenConcessionFactor test. Line number: "<<__LINE__<<endl;
     if(Gender::IsMale(obj))
         cout<<"Failed IsMale test. Line number: "<<__LINE__<<endl;
 }

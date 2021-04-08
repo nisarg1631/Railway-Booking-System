@@ -21,6 +21,7 @@ class BookingCategory; // forward declaration
 template<typename T>
 class BookingTypes;
 
+// abstract base class
 class Booking{
     private:
         // blocked copy constructor and copy assignment operator
@@ -63,13 +64,14 @@ class Booking{
         static void UnitTestBooking();
 };
 
+// sub-types
 template<typename T>
 class BookingTypes : public Booking{
     private:
         uint32_t ComputeFare() const;
     
     public:
-        BookingTypes(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &);
+        BookingTypes(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &, const string &);
         ~BookingTypes();
 };
 

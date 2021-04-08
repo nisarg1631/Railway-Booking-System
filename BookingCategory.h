@@ -10,6 +10,7 @@
 using namespace std;
 
 #include "Categories.h"
+#include "Booking.h"
 
 // forward declarations
 class Passenger;
@@ -80,9 +81,51 @@ template<typename T> inline const BookingCategoryTypes<T> &BookingCategoryTypes<
     return sBookingCategory;
 }
 
-// inline functions for getting information about the class
+// GetName inlined
 inline string BookingCategory::GetName() const{
     return name_;
+}
+
+// check eligibility functions for different sub-types inlined
+template<> inline bool BookingCategory::General::CheckEligibility(const Passenger &passenger) const{
+    return true;
+}
+template<> inline bool BookingCategory::Ladies::CheckEligibility(const Passenger &passenger) const{
+
+}
+template<> inline bool BookingCategory::SeniorCitizen::CheckEligibility(const Passenger &passenger) const{
+
+}
+template<> inline bool BookingCategory::Divyaang::CheckEligibility(const Passenger &passenger) const{
+
+}
+template<> inline bool BookingCategory::Tatkal::CheckEligibility(const Passenger &passenger) const{
+
+}
+template<> inline bool BookingCategory::PremiumTatkal::CheckEligibility(const Passenger &passenger) const{
+
+}
+
+// make reservation functions for different sub-types inlined
+template<> inline void BookingCategory::General::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    Booking::GeneralBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+}
+template<> inline void BookingCategory::Ladies::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    Booking::LadiesBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+}
+template<> inline void BookingCategory::SeniorCitizen::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    Booking::SeniorCitizenBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+}
+template<> inline void BookingCategory::Divyaang::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    Booking::DivyaangBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+}
+template<> inline void BookingCategory::Tatkal::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    // check for tatkal date constraint and any other specific
+    Booking::TatkalBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+}
+template<> inline void BookingCategory::PremiumTatkal::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    // check for tatkal date constraint and any other specific
+    Booking::PremiumTatkalBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
 
 #endif

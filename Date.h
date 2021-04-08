@@ -22,15 +22,15 @@ class Date{
         static uint32_t DaysInMonth(uint32_t, uint32_t); // static function to get days in a month in any year
         static bool IsLeapYear(uint32_t); // static function to check for leap year
 
-        // constructor and destructor made private to ensure they are not called directly with erroneous inputs
+        // constructor made private to ensure it is not called directly with erroneous inputs
         Date(uint32_t, uint32_t, uint32_t);
-        ~Date();
 
         // blocked copy assignment operator
         Date &operator=(const Date &);
 
     public:
         Date(const Date &);
+        ~Date();
 
         // returns the date in a string format dd/mmm/yy
         string ToString() const;

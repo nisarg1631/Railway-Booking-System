@@ -30,11 +30,15 @@ class Gender{
         string GetName() const;
 
         virtual string GetTitle() const = 0;
+        virtual double GetSeniorCitizenConcessionFactor() const = 0;
         static bool IsMale(const Gender &);
 
         // enumerated types
         typedef GenderTypes<MaleType> Male;
         typedef GenderTypes<FemaleType> Female;
+
+        // friend output function
+        friend ostream &operator<<(ostream &, const Gender &);
 };
 
 // derived classes (singletons)
@@ -43,6 +47,7 @@ class GenderTypes : public Gender{
     private:
         static const string sName;
         static const string sSalutation;
+        static const double sSeniorCitizenConcessionFactor;
 
         GenderTypes();
         ~GenderTypes();
@@ -52,6 +57,7 @@ class GenderTypes : public Gender{
         static const GenderTypes<T> &Type();
 
         string GetTitle() const;
+        double GetSeniorCitizenConcessionFactor() const;
 
         static void UnitTest();
 };
@@ -74,6 +80,9 @@ template<typename T> inline const GenderTypes<T> &GenderTypes<T>::Type(){
 
 template<typename T> inline string GenderTypes<T>::GetTitle() const{
     return sSalutation;
+}
+template<typename T> inline double GenderTypes<T>::GetSeniorCitizenConcessionFactor() const{
+    return sSeniorCitizenConcessionFactor;
 }
 
 #endif
