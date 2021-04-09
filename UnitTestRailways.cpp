@@ -33,6 +33,13 @@ void Railways::UnitTestRailways(){
         railways.GetDistance(delhi, chennai) != 2180U)
         cout<<"GetDistance() doesn't return correct value in Railways."<<endl;
     
+    vector<const Station*>::const_iterator it1, it2;
+    for (it1 = sStations.begin(); it1 != sStations.end(); it1++)
+        for (it2 = it1+1; it2 != sStations.end(); it2++)
+            if((*it1)->GetDistance(*(*it2)) != (*it2)->GetDistance(*(*it1)))
+                cout<<"Failed symmetric test"<<endl;
+            
+    
     // check output streaming operator
     cout<<Railways::IndianRailways()<<endl;
 }

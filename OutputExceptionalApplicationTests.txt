@@ -1,0 +1,57 @@
+First and last name can't both be empty.
+
+Year should be between 1900 to 2099.
+
+Invalid date of birth provided for passenger.
+
+Invalid aadhar number provided for passenger.
+
+Invalid mobile number provided for passenger.
+
+Provided station doesn't exist in database.
+
+Invalid station input in booking.
+
+Provided station doesn't exist in database.
+
+Invalid station input in booking.
+
+Origin and destination stations cannot be same.
+
+Invalid station input in booking.
+
+Date of birth must precede date of reservation.
+
+Invalid date input in booking.
+
+Booking date can't precede date of reservation and should be within one year from it.
+
+Invalid date input in booking.
+
+Booking date can't precede date of reservation and should be within one year from it.
+
+Invalid date input in booking.
+
+Tatkal booking can be availed only one day before travel.
+
+Invalid date input in booking.
+
+Tatkal booking can be availed only one day before travel.
+
+Invalid date input in booking.
+
+Passenger is not eligible for travel in divyaang category.
+
+Passenger is not eligible for travel.
+
+Passenger is not eligible for travel in ladies category.
+
+Passenger is not eligible for travel.
+
+Passenger is not eligible for travel in senior citizen category.
+
+Passenger is not eligible for travel.
+
+Passenger is not eligible for travel in senior citizen category.
+
+Passenger is not eligible for travel.

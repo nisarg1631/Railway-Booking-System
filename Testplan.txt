@@ -1,0 +1,200 @@
+// Nisarg Upadhyaya
+// 19CS30031
+
+UNIT TESTS [If everything is running right then the Unit Tests will only print the 
+            output from the output streaming operator of the respective class and nothing else]
+
+Also constructors and destructors have been checked thorugh _DEBUG flag.
+
+1. Station
+
+Create a station Mumbai
+
+    1.1 Check the name_ attribute and GetName() method with the golden value "Mumbai"
+    1.2 Check the GetDistance() method with other stations
+
+    GetDistance()   GOLDEN VALUE
+    ----------------------------
+    Delhi           1447
+    Bangalore       981
+    Kolkata         2014
+    Chennai         1338
+
+    1.3 Check the output streaming operator on the above station
+
+
+2. Railways
+
+    2.1 Check for singleton property [Golden: true]
+    2.2 Check for non existing station [Golden: should raise exception]
+    2.3 Check GetDistance() method for a few pairs of stations specifically checking for symmetric property as well
+
+    GetDistance()       GOLDEN VALUE
+    --------------------------------
+    Delhi & Bangalore   2150
+    Bangalore & Delhi   2150
+    Delhi & Kolkata     1472
+    Chennai & Delhi     2180
+
+    2.4 Exhaustively check distances between all pairs [Golden: distance between symmetric pairs should be same]
+    2.5 Further checking of list of stations and dataset of the distances between them is done using the output streaming operator
+
+3. Concession
+    3.1 General
+        3.1.1 Check Singleton [Golden: true]
+        3.1.2 Check GetConcessionFactor method [Golden: 0]
+    3.2 Ladies
+        3.1.1 Check Singleton [Golden: true]
+        3.1.2 Check GetConcessionFactor method [Golden: 0]
+    3.3 Senior Citizen
+        3.1.1 Check Singleton [Golden: true]
+        3.1.2 Check GetConcessionFactor method (on female) [Golden: 0.5]
+    3.4 Divyaang
+        3.1.1 Check Singleton [Golden: true]
+        3.1.2 Check GetConcessionFactor method (on cancer patient for ac first class) [Golden: 0.5]
+
+4. Divyaang
+    4.1 Blind
+        4.1.1 Check Singleton [Golden: true]
+        4.1.2 Check GetName method [Golden: "Blind"]
+        4.1.3 Check GetConcessionFactor method on all 8 booking classes [Golden: depending on values set in Application.cpp]
+    4.2 Handicaped
+        4.2.1 Check Singleton [Golden: true]
+        4.2.2 Check GetName method [Golden: "Orthopaedically Handicaped"]
+        4.2.3 Check GetConcessionFactor method on all 8 booking classes [Golden: depending on values set in Application.cpp]
+    4.3 Cancer Patient
+        4.3.1 Check Singleton [Golden: true]
+        4.3.2 Check GetName method [Golden: "Cancer Patient"]
+        4.3.3 Check GetConcessionFactor method on all 8 booking classes [Golden: depending on values set in Application.cpp]
+    4.4 TB Patient
+        4.4.1 Check Singleton [Golden: true]
+        4.4.2 Check GetName method [Golden: "TB Patient"]
+        4.4.3 Check GetConcessionFactor method on all 8 booking classes [Golden: depending on values set in Application.cpp]
+    4.5 None
+        4.5.1 Check Singleton [Golden: true]
+        4.5.2 Check GetName method [Golden: "None"]
+        4.5.3 Check GetConcessionFactor method on any booking class [Golden: 0]
+
+4. Date
+
+- Check all month names are properly loaded in sMonthNames
+- Check for proper construction by comparing date_, month_, year_ with golden values
+
+    Date(16, 3, 2001)
+
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    date_           16
+    month_          3
+    year_           2001
+
+- Check ToString() method with golden value "16/Mar/2001"
+- Check output streaming operator
+
+5. BookingClasses
+
+- Check for singleton property for each of the 7 concrete booking classes
+- Check the methods GetName(), GetLoadFactor(), GetNumberOfTiers(), IsSitting(), IsAC(), IsLuxury() for each of the 7 concrete booking
+    classes and match with the golden output given below
+
+        Method      GetName()       *GetLoadFactor()    GetNumberOfTiers()    IsSitting()    IsAC()    *IsLuxury()
+    Class
+    --------------------------------------------------------------------------------------------------------------
+    ACFirstClass    AC First Class  3.00                2                     False          True      True
+    AC2Tier         AC 2 Tier       2.00                2                     False          True      False
+    FirstClass      First Class     2.00                2                     False          False     True
+    AC3Tier         AC 3 Tier       1.75                3                     False          True      False
+    ACChairCar      AC Chair Car    1.25                0                     True           True      False
+    Sleeper         Sleeper         1.00                3                     False          False     False
+    SecondSitting   Second Sitting  0.50                0                     True           False     False
+
+    Methods marked with *
+    Note that these constants are changeable from the Application space and 
+    the tests are only for verifying if their value is being set properly.
+    The tests above are based on the values currently set and may be changed by the user of the Application.
+
+- Check the output streaming operator on each concrete class
+
+APPLICATION TESTS
+
+Extensive unit testing on individual classes has been done. In the application tests the primary focus will be on Bookings in different categories and happy paths and exceptional paths.
+
+// note - system date has been set as 09/04/2021 which will be considered as date of reservation
+
+1. Exceptional Paths (Note that in this case golden output will just be that appropriate exception is raised)
+
+    1.1 Decrepancy in Passenger data
+
+        1.1.1 First and Last empty [Golden: Invalid_Name exception raised]
+        1.1.2 Date of birth "00/00/0000" [Golden: Invalid_Date_Of_Birth exception raised]
+        1.1.3 Aadhar number "1234" [Golden: Invalid_Aadhar exception raised]
+        1.1.4 Mobile number "abcdefghij" [Golden: Invalid_Mobile exception raised]
+
+    1.2 Decrepancy in Stations provided
+
+        1.2.1 From station "Dehradun" To station "Mumbai" [Golden: Station_Not_Found exception raised]
+        1.2.2 From station "Mumbai" To station "Dehradun" [Golden: Station_Not_Found exception raised]
+        1.2.3 From station "Mumbai" To station "Mumbai" [Golden: Same_Station exception raised]
+    
+    1.3 Decrepancy in Dates
+
+        1.3.1 Date of birth "10/04/2021" [Golden: Invalid_Birth_Date exception raised] // birth date after reservation date
+        1.3.2 Booking date "08/04/2021" [Golden: Invalid_Booking_Date exception raised] // booking date before reservation date
+        1.3.3 Booking date "10/04/2022" [Golden: Invalid_Booking_Date exception raised] // booking date one year after reservation date
+        1.3.4 Booking date "11/04/2021", Tatkal category [Golden: Invalid_Tatkal_Date exception raised] // tatkal more than one day in advance
+        1.3.5 Booking date "11/04/2021", Premium Tatkal category [Golden: Invalid_Tatkal_Date exception raised] // premium tatkal more than one day in advance
+
+    1.4 Decrepancy in Eligibility
+
+        1.4.1 Disability type: None, Divyaang category [Golden: Divyaang_Ineligible exception raised]
+        1.4.2 Gender: Male, Date of birth "08/04/2008", Ladies category [Golden: Ladies_Ineligible exception raised] // male above 12 are not permitted in ladies category
+        1.4.3 Gender: Male, Date of birth "08/04/1962", Senior Citizen  [Golden: Senior_Citizen_Ineligible exception raised] // male below 60 are not permitted in senior citizen category
+        1.4.3 Gender: Female, Date of birth "08/04/1964", Senior Citizen  [Golden: Senior_Citizen_Ineligible exception raised] // female below 58 are not permitted in senior citizen category
+    
+    The output has been put to OutputExceptionalApplicationTests.txt file.
+
+
+2. Happy Paths
+
+    For these tests we take the passenger data to be valid, with date of birth and disability type set accordingly (mentioned where necessary)
+
+    2.1 First we test all the 8 classes from Delhi to Chennai in General Booking Category
+        2.1.1 ACFirstClass [Golden Fare: 7145]
+        2.1.2 ExecutiveChairCar [Golden Fare: 5510]
+        2.1.3 AC2Tier [Golden Fare: 4410]
+        2.1.4 FirstClass [Golden Fare: 3320]
+        2.1.5 AC3Tier [Golden Fare: 2765]
+        2.1.6 ACChairCar [Golden Fare: 2220]
+        2.1.7 Sleeper [Golden Fare: 1110]
+        2.1.8 SecondSitting [Golden Fare: 669]
+    
+    2.2 Check all ordered pairs of stations for Sleeper Class, General Booking Category
+        [Golden output: Fares for symmetric bookings should be same]
+
+    2.3 Check various special booking categories, (tested for bookings from Delhi to Mumbai, Sleeper Class unless explicitly stated)
+
+        2.3.1 Ladies Category
+            2.3.1.1 Gender: Female [Golden Fare: 744]
+            2.3.1.1 Gender: Male, Date of birth "08/04/2010" [Golden Fare: 744] // male below 12 years are allowed
+        
+        2.3.2 Senior Citizen Category (AC First Class)
+            2.3.2.1 Gender: Male, Date of birth "08/04/1961" [Golden Fare: 2882]
+            2.3.2.2 Gender: Female, Date of birth "08/04/1963" [Golden Fare: 2411]
+        
+        2.3.3 Divyaang Category (Check all 4 divyaang)
+            2.3.3.1 Blind [Golden Fare: 201]
+            2.3.3.2 Handicaped [Golden Fare: 201]
+            2.3.3.3 Cancer Patient [Golden Fare: 20]
+            2.3.3.4 TB Patient [Golden Fare: 201]
+        
+        2.3.4 Tatkal 
+            2.3.4.1 Minimum Distance Cap, AC First Class, Chennai to Bangalore [Golden Fare: 1198]
+            2.3.4.2 Maximum Charge Cap, AC 3 Tier, Delhi to Mumbai [Golden Fare: 2249]
+            2.3.4.3 Without Cap rules applying, AC 3 Tier, Mumbai to Bangalore [Golden Fare: 1634]
+        
+        2.3.4 Premium Tatkal 
+            2.3.4.1 Minimum Distance Cap, AC First Class, Chennai to Bangalore [Golden Fare: 1198]
+            2.3.4.2 Maximum Charge Cap, AC 3 Tier, Delhi to Mumbai [Golden Fare: 2649]
+            2.3.4.3 Without Cap rules applying, AC 3 Tier, Mumbai to Bangalore [Golden Fare: 2002]
+
+    The output has been put to OutputHappyApplicationTests.txt file.

@@ -29,8 +29,7 @@ To see constructor and destructor calls add the flag -D_DEBUG to any compilation
 
 - UnitTestBooking
 ```
-$ g++-10 -std=c++11 UnitTestBooking.cpp Application.cpp Booking.cpp Date.cpp Railways.cpp BookingClasses.cpp Station.cpp -o UnitTestBooking
-$ ./UnitTestBooking
+Done primarily in main application testing itself
 ```
 
 - UnitTestStation
@@ -87,8 +86,14 @@ $ g++-10 -std=c++11 UnitTestBookingClasses.cpp Application.cpp BookingClasses.cp
 $ ./UnitTestBookingClasses
 ```
 
-- ApplicationTests
+- ApplicationTestsExceptional
 ```
-$ g++-10 -std=c++11  ApplicationTests.cpp Application.cpp BookingClasses.cpp Railways.cpp Station.cpp Booking.cpp Date.cpp -o ApplicationTests
-$ ./ApplicationTests
+$ g++-10 -std=c++11 ApplicationTestsExceptional.cpp Booking.cpp BookingCategory.cpp Concession.cpp Gender.cpp BookingClasses.cpp Application.cpp Divyaang.cpp Passenger.cpp Date.cpp Name.cpp Station.cpp Railways.cpp -o ApplicationTestsExceptional
+$ ./ApplicationTestsExceptional
+```
+
+- ApplicationTestsHappy
+```
+$ g++-10 -std=c++11 ApplicationTestsHappy.cpp Booking.cpp BookingCategory.cpp Concession.cpp Gender.cpp BookingClasses.cpp Application.cpp Divyaang.cpp Passenger.cpp Date.cpp Name.cpp Station.cpp Railways.cpp -o ApplicationTestsHappy
+$ ./ApplicationTestsHappy
 ```

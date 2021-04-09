@@ -36,7 +36,7 @@ class Booking{
         const Station fromStation_, toStation_;
         const Date dateOfBooking_, dateOfReservation_;
         const BookingClasses &bookingClass_; // const reference to the singleton booking class
-        const Passenger &passenger_;
+        const Passenger passenger_;
         uint32_t fare_;
         uint32_t pnr_;
         bool bookingStatus_;

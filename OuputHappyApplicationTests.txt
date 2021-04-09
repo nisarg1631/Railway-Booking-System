@@ -1,0 +1,549 @@
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 1
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = AC First Class
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: Yes
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 7145
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 2
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Executive Chair Car
+        -Mode: Sitting
+        -Comfort: AC
+        -Bunks: 0
+        -Luxury: Yes
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 5510
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 3
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = AC 2 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 4410
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 4
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = First Class
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 2
+        -Luxury: Yes
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 3320
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 5
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = AC 3 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 2765
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 6
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = AC Chair Car
+        -Mode: Sitting
+        -Comfort: AC
+        -Bunks: 0
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 2220
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 7
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 1110
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = General booking succeeded.
+PNR Number = 8
+From Station = Delhi
+To Station = Chennai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Second Sitting
+        -Mode: Sitting
+        -Comfort: Non-AC
+        -Bunks: 0
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 669
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Ladies booking succeeded.
+PNR Number = 9
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Ms. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 16/Mar/2001
+        -Gender: Female
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 744
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Ladies booking succeeded.
+PNR Number = 10
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/2010
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 744
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Senior Citizen booking succeeded.
+PNR Number = 11
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = AC First Class
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: Yes
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 2882
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Senior Citizen booking succeeded.
+PNR Number = 12
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = AC First Class
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: Yes
+Passenger Details
+        -Name: Ms. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1963
+        -Gender: Female
+        -Disability: None
+        -Disability ID: Not provided
+Fare = 2411
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Divyaang booking succeeded.
+PNR Number = 13
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: Blind
+        -Disability ID: Not provided
+Fare = 201
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Divyaang booking succeeded.
+PNR Number = 14
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: Orthopaedically Handicaped
+        -Disability ID: Not provided
+Fare = 201
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Divyaang booking succeeded.
+PNR Number = 15
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: Cancer Patient
+        -Disability ID: Not provided
+Fare = 20
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Divyaang booking succeeded.
+PNR Number = 16
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 11/Apr/2021
+Travel Class = Sleeper
+        -Mode: Sleeping
+        -Comfort: Non-AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 201
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Tatkal booking succeeded.
+PNR Number = 17
+From Station = Chennai
+To Station = Bangalore
+Reservation Date = 9/Apr/2021
+Travel Date = 10/Apr/2021
+Travel Class = AC First Class
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: Yes
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 1198
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Tatkal booking succeeded.
+PNR Number = 18
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 10/Apr/2021
+Travel Class = AC 3 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 2249
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Tatkal booking succeeded.
+PNR Number = 19
+From Station = Bangalore
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 10/Apr/2021
+Travel Class = AC 3 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 1634
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Premium Tatkal booking succeeded.
+PNR Number = 20
+From Station = Chennai
+To Station = Bangalore
+Reservation Date = 9/Apr/2021
+Travel Date = 10/Apr/2021
+Travel Class = AC First Class
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 2
+        -Luxury: Yes
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 1198
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Premium Tatkal booking succeeded.
+PNR Number = 21
+From Station = Delhi
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 10/Apr/2021
+Travel Class = AC 3 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 2649
+
+##################### BOOKING END #####################
+
+#################### BOOKING START ####################
+
+Booking Message = Premium Tatkal booking succeeded.
+PNR Number = 22
+From Station = Bangalore
+To Station = Mumbai
+Reservation Date = 9/Apr/2021
+Travel Date = 10/Apr/2021
+Travel Class = AC 3 Tier
+        -Mode: Sleeping
+        -Comfort: AC
+        -Bunks: 3
+        -Luxury: No
+Passenger Details
+        -Name: Mr. Test Passenger
+        -Aadhar: 123456781234
+        -Mobile: 9876543210
+        -DOB: 8/Apr/1961
+        -Gender: Male
+        -Disability: TB Patient
+        -Disability ID: Not provided
+Fare = 2002
+
+##################### BOOKING END #####################

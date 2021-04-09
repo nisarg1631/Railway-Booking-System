@@ -29,7 +29,7 @@ void LadiesConcession::UnitTest(){
             Name::CreateName("Krupa", "", "Upadhyaya"), 
             "123456781234",
             "9876543210",
-            Date::CreateDate("16/03/2001"),
+            "16/03/2001",
             Gender::Female::Type(),
             Divyaang::None::Type(),
             ""));
@@ -55,7 +55,7 @@ void SeniorCitizenConcession::UnitTest(){
             Name::CreateName("Kirtika", "", "Upadhyaya"), 
             "123456781234",
             "9876543210",
-            Date::CreateDate("16/03/2001"),
+            "16/03/2001",
             Gender::Female::Type(),
             Divyaang::None::Type(),
             ""));
@@ -81,7 +81,7 @@ void DivyaangConcession::UnitTest(){
             Name::CreateName("Test", "", "Passenger"), 
             "123456781234",
             "9876543210",
-            Date::CreateDate("16/03/2001"),
+            "16/03/2001",
             Gender::Male::Type(),
             Divyaang::CancerPatient::Type(),
             ""));

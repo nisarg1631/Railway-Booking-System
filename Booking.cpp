@@ -67,6 +67,7 @@ void Booking::ClearBookings(){
     vector<Booking *>::iterator it;
     for(it = Booking::sBookings.begin(); it != Booking::sBookings.end(); it++)
         delete *it;
+    sBookings.clear();
 }
 
 // compute fares for different sub-types implemented based on the logic provided
