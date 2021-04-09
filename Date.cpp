@@ -4,6 +4,7 @@
 #include <sstream>
 #include <regex>
 #include "Date.h"
+#include "Exceptions.h"
 
 // initialise static constants
 const vector<uint32_t> Date::sMonthLength = {0U, 31U, 28U, 31U, 30U, 31U, 30U, 31U, 31U, 30U, 31U, 30U, 31U};
@@ -38,20 +39,20 @@ Date Date::CreateDate(const string &s){
         ss >> date >> delimitter >> month >> delimitter >> year;
 
         if(year<sMinYear || year>sMaxYear)
-            throw string("Year out of bound."); // year out of bounds
+            throw Year_Out_Of_Bound(); // year out of bounds
         
         if(month<1U || month>12U)
-            throw string("Month out of bound."); // month out of bounds
+            throw Month_Out_Of_Bound(); // month out of bounds
         
         if(date<1U || date>31U)
-            throw string("Date out of bound."); // date out of bounds
+            throw Date_Out_Of_Bound(); // date out of bounds
 
         if(date > DaysInMonth(month, year))
-            throw string("Invalid date."); // invalid date
+            throw Date_Doesnt_Exist(); // invalid date
 
         return Date(date, month, year);
     }
-    throw string("Invalid input format."); // invalid input format
+    throw Invalid_Input_Format(); // invalid input format
 }
 
 tuple<uint32_t, uint32_t, uint32_t> operator-(const Date &d1, const Date &d2){

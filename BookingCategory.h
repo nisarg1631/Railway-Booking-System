@@ -11,6 +11,7 @@ using namespace std;
 
 #include "Categories.h"
 #include "Booking.h"
+#include "Exceptions.h"
 
 // forward declarations
 class Passenger;
@@ -39,7 +40,7 @@ class BookingCategory{
         string GetName() const;
 
         // virtual functions, implemented in BookingCategoryTypes with appropriate logic
-        virtual void MakeReservation(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &) const = 0;
+        virtual Booking *MakeReservation(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &) const = 0;
         virtual bool CheckEligibility(const Passenger &) const = 0;
 
         // enumerated types
@@ -66,7 +67,7 @@ class BookingCategoryTypes : public BookingCategory{
         // singleton object
         static const BookingCategoryTypes<T> &Type();
 
-        void MakeReservation(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &) const;
+        Booking *MakeReservation(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &) const;
         bool CheckEligibility(const Passenger &) const;
 
         // unit testing function
@@ -91,41 +92,59 @@ template<> inline bool BookingCategory::General::CheckEligibility(const Passenge
     return true;
 }
 template<> inline bool BookingCategory::Ladies::CheckEligibility(const Passenger &passenger) const{
-
+    uint32_t age = get<2>(passenger.GetDateOfBirth()-Date::Today);
+    if((!Gender::IsMale(passenger.GetGender())) || (age<12U))
+        return true;
+    throw Ladies_Ineligible();
 }
 template<> inline bool BookingCategory::SeniorCitizen::CheckEligibility(const Passenger &passenger) const{
-
+    uint32_t age = get<2>(passenger.GetDateOfBirth()-Date::Today);
+    if(((Gender::IsMale(passenger.GetGender())) && (age>=60U)) || ((!Gender::IsMale(passenger.GetGender())) && (age>=58U)))
+        return true;
+    throw Senior_Citizen_Ineligible();
 }
 template<> inline bool BookingCategory::Divyaang::CheckEligibility(const Passenger &passenger) const{
-
+    if(passenger.GetDisabilityType().GetName() != "None")
+        return true;
+    throw Divyaang_Ineligible();
 }
 template<> inline bool BookingCategory::Tatkal::CheckEligibility(const Passenger &passenger) const{
-
+    return true;
 }
 template<> inline bool BookingCategory::PremiumTatkal::CheckEligibility(const Passenger &passenger) const{
-
+    return true;
 }
 
 // make reservation functions for different sub-types inlined
-template<> inline void BookingCategory::General::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
-    Booking::GeneralBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+template<> inline Booking *BookingCategory::General::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    return new Booking::GeneralBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
-template<> inline void BookingCategory::Ladies::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
-    Booking::LadiesBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+template<> inline Booking *BookingCategory::Ladies::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    return new Booking::LadiesBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
-template<> inline void BookingCategory::SeniorCitizen::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
-    Booking::SeniorCitizenBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+template<> inline Booking *BookingCategory::SeniorCitizen::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    return new Booking::SeniorCitizenBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
-template<> inline void BookingCategory::Divyaang::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
-    Booking::DivyaangBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+template<> inline Booking *BookingCategory::Divyaang::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    return new Booking::DivyaangBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
-template<> inline void BookingCategory::Tatkal::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
-    // check for tatkal date constraint and any other specific
-    Booking::TatkalBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+template<> inline Booking *BookingCategory::Tatkal::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    tuple<uint32_t, uint32_t, uint32_t> diff = dateOfBooking - dateOfReservation;
+    uint32_t date_diff = get<0>(diff), month_diff = get<1>(diff), year_diff = get<2>(diff);
+
+    if(!(date_diff==1 && month_diff==0 && year_diff==0))
+        throw Invalid_Tatkal_Date();
+    
+    return new Booking::TatkalBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
-template<> inline void BookingCategory::PremiumTatkal::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
-    // check for tatkal date constraint and any other specific
-    Booking::PremiumTatkalBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
+template<> inline Booking *BookingCategory::PremiumTatkal::MakeReservation(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass) const{
+    tuple<uint32_t, uint32_t, uint32_t> diff = dateOfBooking - dateOfReservation;
+    uint32_t date_diff = get<0>(diff), month_diff = get<1>(diff), year_diff = get<2>(diff);
+
+    if(!(date_diff==1 && month_diff==0 && year_diff==0))
+        throw Invalid_Tatkal_Date();
+    
+    return new Booking::PremiumTatkalBooking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass, GetName());
 }
 
 #endif

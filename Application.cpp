@@ -4,6 +4,10 @@
 #include "BookingClasses.h"
 #include "Booking.h"
 #include "Concession.h"
+#include "Date.h"
+
+// set todays date
+const Date Date::Today(9U,4U,2021U);
 
 // set the necessary parameters for the application here
 const double Booking::sBaseFarePerKM = 0.50;

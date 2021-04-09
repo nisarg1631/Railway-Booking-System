@@ -35,7 +35,7 @@ class Passenger{
         ~Passenger();
 
         // creates a new passenger object if valid data is provided, otherwise raises an exception
-        static Passenger CreatePassenger(const Name &, const string &, const string &, const Date &, const Gender &, const Divyaang & = Divyaang::None::Type(), const string & = "");
+        static Passenger CreatePassenger(const Name &, const string &, const string &, const string &, const Gender &, const Divyaang & = Divyaang::None::Type(), const string & = "");
 
         const Name &GetName() const;
         string GetAadharNum() const;

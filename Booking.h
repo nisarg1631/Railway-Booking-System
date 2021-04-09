@@ -33,7 +33,7 @@ class Booking{
         static const double sBaseFarePerKM; // static const required for fare computation
         static uint32_t sBookingPNRSerial;  // static to assign unique PNRs to bookings in a sequential order
 
-        const Station &fromStation_, &toStation_;
+        const Station fromStation_, toStation_;
         const Date dateOfBooking_, dateOfReservation_;
         const BookingClasses &bookingClass_; // const reference to the singleton booking class
         const Passenger &passenger_;
@@ -48,9 +48,11 @@ class Booking{
     
     public:
         // static function to make any reservation, it calls the MakeReservation of the BookingCategory passed which creates an appropriate Booking sub-type (virtual constructor idiom)
-        static void MakeReservation(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &, const BookingCategory &);
+        static void MakeReservation(const string &, const string &, const string &, const Passenger &, const BookingClasses &, const BookingCategory &);
         // static function to print all bookings made so far
         static void PrintBookings();
+        // static function to clear all bookings
+        static void ClearBookings();
 
         // sub-types
         typedef BookingTypes<Categories::GeneralType> GeneralBooking;
@@ -74,5 +76,13 @@ class BookingTypes : public Booking{
         BookingTypes(const Station &, const Station &, const Date &, const Date &, const Passenger &, const BookingClasses &, const string &);
         ~BookingTypes();
 };
+
+// booking  types implementations
+template<typename T> BookingTypes<T>::BookingTypes(const Station &fromStation, const Station &toStation, const Date &dateOfBooking, const Date &dateOfReservation, const Passenger &passenger, const BookingClasses &bookingClass, const string &category) : Booking(fromStation, toStation, dateOfBooking, dateOfReservation, passenger, bookingClass){
+    bookingStatus_ = true;
+    bookingMessage_ = category + " booking succeeded.";
+    fare_ = ComputeFare();
+}
+template<typename T> BookingTypes<T>::~BookingTypes() {}
 
 #endif

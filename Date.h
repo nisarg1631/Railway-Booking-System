@@ -29,6 +29,7 @@ class Date{
         Date &operator=(const Date &);
 
     public:
+        static const Date Today; // static constant representing todays date
         Date(const Date &);
         ~Date();
 

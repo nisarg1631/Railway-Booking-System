@@ -2,6 +2,7 @@
 // 19CS30031
 
 #include "Name.h"
+#include "Exceptions.h"
 
 // constructor and destructor
 Name::Name(string firstName, string middleName, string lastName) : firstName_(firstName), middleName_(middleName), lastName_(lastName) {
@@ -18,7 +19,7 @@ Name::~Name(){
 
 Name Name::CreateName(const string &firstName, const string &middleName, const string &lastName){
     if(firstName.empty() && lastName.empty())
-        throw string("First name and last name cannot both be empty.");
+        throw Invalid_Name();
     return Name(firstName, middleName, lastName);
 }
 

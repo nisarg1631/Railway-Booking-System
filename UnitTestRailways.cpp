@@ -20,7 +20,9 @@ void Railways::UnitTestRailways(){
     try{
         const Station &ahmedabad = railways.GetStation("Ahmedabad");
     }
-    catch(const In)
+    catch(const Invalid_Station_Input &e){
+        cout<<e.what()<<endl;
+    }
 
     // check for symmetricity in GetDistance
     if(railways.GetDistance(delhi, bangalore) != railways.GetDistance(delhi, bangalore))

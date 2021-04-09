@@ -4,6 +4,7 @@
 #include <regex>
 
 #include "Passenger.h"
+#include "Exceptions.h"
 
 Passenger::Passenger(const Name &name, const string &aadharNum, const string &mobileNum, const Date &dateOfBirth, const Gender &gender, const Divyaang &disabilityType, const string &disabilityID) : name_(name), aadharNum_(aadharNum), mobileNum_(mobileNum), dateOfBirth_(dateOfBirth), gender_(gender), disabilityType_(disabilityType), disabilityID_(disabilityID) {
     #ifdef _DEBUG
@@ -17,14 +18,21 @@ Passenger::~Passenger(){
     #endif
 }
 
-Passenger Passenger::CreatePassenger(const Name &name, const string &aadharNum, const string &mobileNum, const Date &dateOfBirth, const Gender &gender, const Divyaang &disabilityType, const string &disabilityID){
+Passenger Passenger::CreatePassenger(const Name &name, const string &aadharNum, const string &mobileNum, const string &dateOfBirth, const Gender &gender, const Divyaang &disabilityType, const string &disabilityID){
     if(!regex_match(aadharNum, regex("[0-9]{12}"))) // if aadhar number is invalid
-        throw string("Invalid aadhar number.");
+        throw Invalid_Aadhar();
     if(!mobileNum.empty() && !regex_match(mobileNum, regex("[0-9]{10}"))) // if mobile number is provided and is invalid
-        throw string("Invalid mobile number.");
+        throw Invalid_Mobile();
     if(!disabilityID.empty() && !regex_match(disabilityID, regex("[0-9]+"))) // if disability id is provided and is invalid
-        throw string("Invalid disability ID.");
-    return Passenger(name, aadharNum, mobileNum, dateOfBirth, gender, disabilityType, disabilityID);
+        throw Invalid_Disability_ID();
+    try{
+        Date dob(Date::CreateDate(dateOfBirth));
+        return Passenger(name, aadharNum, mobileNum, dob, gender, disabilityType, disabilityID);
+    }
+    catch(const Bad_Date &e){
+        cout<<e.what()<<endl;
+        throw Invalid_Date_Of_Birth();
+    }
 }
 
 ostream &operator<<(ostream &os, const Passenger &passenger){
