@@ -45,6 +45,12 @@ $ g++-10 -std=c++11 UnitTestRailways.cpp Railways.cpp Station.cpp -o UnitTestRai
 $ ./UnitTestRailways
 ```
 
+- UnitTestConcession
+```
+$ g++-10 -std=c++11 UnitTestConcession.cpp Concession.cpp Gender.cpp BookingClasses.cpp Application.cpp Divyaang.cpp Passenger.cpp Date.cpp Name.cpp -o UnitTestConcession
+$ ./UnitTestConcession
+```
+
 - UnitTestDivyaang
 ```
 $ g++-10 -std=c++11 UnitTestDivyaang.cpp Divyaang.cpp BookingClasses.cpp Application.cpp -o UnitTestDivyaang
