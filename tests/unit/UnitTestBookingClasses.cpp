@@ -290,7 +290,7 @@ TEST_CASE( "SecondSitting test case", "[SecondSitting]" ) {
     REQUIRE( abs(obj.GetTatkalLoadFactor()-0.1) <= 1e-6 );
     REQUIRE( abs(obj.GetMinimumTatkalCharge()-10.0) <= 1e-6 );
     REQUIRE( abs(obj.GetMaximumTatkalCharge()-15.0) <= 1e-6 );
-    REQUIRE( obj.GetMinimumTatkalDistance() == 100U );
+    REQUIRE( obj.GetMinimumTatkalDistance() != 100U );
 
     // check output streaming operator
     cout<<BookingClasses::SecondSitting::Type()<<endl;
