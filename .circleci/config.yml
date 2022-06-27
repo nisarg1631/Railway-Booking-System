@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: gcc:10
+    steps:
+      - checkout
+      - run: make unittests
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
