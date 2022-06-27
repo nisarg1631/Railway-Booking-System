@@ -23,7 +23,7 @@ Note that **Application.cpp** itself doesn't have a main function. Test files ha
 ## Compilation commands to run any unit test or application test
 
 #### COMPILER USED: g++ (Version 10.1.0)
-#### C++ STANDARD: C++11
+#### C++ STANDARD: C++17
 
 To see constructor and destructor calls add the flag -D_DEBUG to any compilation command
 
