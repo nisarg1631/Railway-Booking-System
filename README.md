@@ -1,5 +1,8 @@
-## Nisarg Upadhyaya
-## 19CS30031
+# Railway Booking System
+
+Made using: ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+Build: [![nisarg1631](https://circleci.com/gh/nisarg1631/Railway-Booking-System.svg?style=shield)](https://app.circleci.com/pipelines/github/nisarg1631/Railway-Booking-System)
 
 There are 5 primary classes which have been implemented namely
 1. Booking
